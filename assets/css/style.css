@@ -206,14 +206,16 @@ body.loaded #loader{
 }
 
 /* ===========================================================
-Hero
+HERO
 =========================================================== */
 
 .hero{
 
     position:relative;
 
-    min-height:100vh;
+    height:100vh;
+
+    overflow:hidden;
 
     display:flex;
 
@@ -221,22 +223,96 @@ Hero
 
     align-items:center;
 
-    overflow:hidden;
-
     background:
-
-        linear-gradient(
-            rgba(0,48,73,.62),
-            rgba(0,48,73,.62)
-        ),
-
-        url("../img/hero.jpg");
+    linear-gradient(
+        rgba(0,40,60,.45),
+        rgba(0,55,80,.55)
+    ),
+    url("../img/hero.jpg");
 
     background-size:cover;
-
     background-position:center;
+    background-repeat:no-repeat;
 
-    background-attachment:fixed;
+}
+
+.hero-overlay{
+
+    position:absolute;
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(255,255,255,.08),
+            transparent 55%
+        );
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:5;
+
+    text-align:center;
+
+    width:min(900px,90%);
+
+}
+
+.hero-logo{
+
+    width:260px;
+
+    margin:0 auto 40px;
+
+    padding:20px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.90);
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.25);
+
+    transition:.4s;
+
+}
+
+.hero-logo:hover{
+
+    transform:translateY(-8px) scale(1.03);
+
+}
+
+.hero h1{
+
+    color:white;
+
+    font-size:4.8rem;
+
+    margin-bottom:20px;
+
+    text-shadow:
+    0 4px 18px rgba(0,0,0,.4);
+
+}
+
+.hero p{
+
+    color:white;
+
+    font-size:1.3rem;
+
+    opacity:.95;
+
+    margin-bottom:45px;
+
+    letter-spacing:1px;
 
 }
 
@@ -246,9 +322,9 @@ Navigation
 
 .navbar{
 
-    position:fixed;
+    position:absolute;
 
-    top:25px;
+    top:30px;
 
     left:50%;
 
@@ -274,9 +350,7 @@ Navigation
 
     border-radius:50px;
 
-    z-index:2000;
-
-    transition:.4s;
+    z-index:1000;
 
 }
 
