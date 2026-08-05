@@ -1,22 +1,29 @@
-/* styles.css — simple responsive styling for the placeholder site */
+/* styles.css — improved Portuguese layout and typography */
 :root{
   --bg:#ffffff;
   --text:#222;
-  --muted:#555;
+  --muted:#5b6068;
   --accent:#0a6cf0;
-  --card:#f9f9fb;
+  --card:#fbfcff;
+  --radius:12px;
 }
 *{box-sizing:border-box}
-body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; color:var(--text); background:var(--bg); line-height:1.5}
-.container{max-width:900px; margin:28px auto; padding:0 20px}
-.site-header{background:linear-gradient(90deg, #fafafa, #fff); border-bottom:1px solid #eee}
-.header-inner{display:flex; gap:16px; align-items:center; padding:18px 20px}
-.logo{width:64px; height:auto}
-h1{margin:0; font-size:1.6rem}
-.tagline{margin:4px 0 0; color:var(--muted)}
-.card{background:var(--card); padding:18px; border-radius:10px; margin-bottom:18px; box-shadow:0 1px 2px rgba(0,0,0,0.03)}
-.lead{font-weight:500}
-.form-placeholder{display:flex; align-items:center; justify-content:center; height:320px; border:2px dashed #e0e6f3; border-radius:8px; color:var(--muted); background:linear-gradient(180deg, rgba(10,108,240,0.02), transparent)}
-.muted{background:transparent; box-shadow:none; color:var(--muted); border-top:1px solid #eee}
+body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; color:var(--text); background:var(--bg); line-height:1.6}
+.container{max-width:1000px; margin:28px auto; padding:0 20px}
+.site-header{background:linear-gradient(90deg, #fff, #fbfdff); border-bottom:1px solid #eee}
+.header-inner{display:flex; gap:18px; align-items:center; padding:20px 0}
+.logo{width:72px; height:auto; flex:0 0 auto}
+h1{margin:0; font-size:1.8rem; letter-spacing:0.6px}
+.tagline{margin:6px 0 0; color:var(--muted)}
+.nav{display:flex; gap:12px; padding:10px 0 18px}
+.nav a{color:var(--accent); text-decoration:none; font-weight:600}
+.card{background:var(--card); padding:22px; border-radius:var(--radius); margin-bottom:18px; box-shadow:0 6px 18px rgba(12,20,40,0.04); border:1px solid rgba(10,108,240,0.03)}
+.lead{font-weight:600; color:#1f2933}
+.history-grid{display:grid; grid-template-columns:1fr 320px; gap:18px; align-items:start; margin-top:12px}
+.inset{background:linear-gradient(180deg,#fff,#fbfdff); padding:16px}
+ol{padding-left:18px}
+.form-placeholder{display:flex; align-items:center; justify-content:center; height:280px; border:2px dashed #e6eefc; border-radius:8px; color:var(--muted); background:linear-gradient(180deg, rgba(10,108,240,0.02), transparent)}
+.muted{background:transparent; box-shadow:none; color:var(--muted); border-top:1px solid #f0f4fb}
 a{color:var(--accent)}
-@media (max-width:600px){.header-inner{flex-direction:row; gap:12px}.logo{width:52px} h1{font-size:1.2rem}}
+pre.code{background:#0f1724; color:#e6f0ff; padding:12px; border-radius:8px; overflow:auto}
+@media (max-width:880px){.history-grid{grid-template-columns:1fr;}.logo{width:56px} h1{font-size:1.4rem}}
