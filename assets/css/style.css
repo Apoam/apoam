@@ -1,0 +1,611 @@
+/* ===========================================================
+   APOAM
+   Main Stylesheet
+   Part 1
+=========================================================== */
+
+:root{
+
+    --ocean:#003049;
+    --atlantic:#005F73;
+    --turquoise:#0A9396;
+    --foam:#94D2BD;
+    --sand:#E9D8A6;
+
+    --white:#ffffff;
+    --light:#f7fafb;
+    --text:#243746;
+
+    --shadow:
+        0 15px 40px rgba(0,0,0,.15);
+
+    --radius:18px;
+
+    --transition:.35s ease;
+
+    --max-width:1280px;
+
+}
+
+/* ===========================================================
+Reset
+=========================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:"Inter",sans-serif;
+
+    color:var(--text);
+
+    background:#fff;
+
+    overflow-x:hidden;
+
+    line-height:1.7;
+
+}
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+section{
+
+    position:relative;
+
+}
+
+/* ===========================================================
+Typography
+=========================================================== */
+
+h1,h2,h3,h4{
+
+    font-family:"Montserrat",sans-serif;
+
+    color:var(--ocean);
+
+}
+
+h1{
+
+    font-size:4.8rem;
+
+    line-height:1.05;
+
+    font-weight:800;
+
+}
+
+h2{
+
+    font-size:2.8rem;
+
+    margin-bottom:25px;
+
+}
+
+h3{
+
+    font-size:1.4rem;
+
+    margin-bottom:15px;
+
+}
+
+p{
+
+    font-size:1.05rem;
+
+    color:#445566;
+
+}
+
+/* ===========================================================
+Containers
+=========================================================== */
+
+.container{
+
+    width:min(90%,var(--max-width));
+
+    margin:auto;
+
+}
+
+.section{
+
+    padding:110px 0;
+
+}
+
+.center{
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+
+/* ===========================================================
+Loader
+=========================================================== */
+
+#loader{
+
+    position:fixed;
+
+    inset:0;
+
+    background:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:99999;
+
+    transition:.5s;
+
+}
+
+.spinner{
+
+    width:60px;
+
+    height:60px;
+
+    border:6px solid #d9ecef;
+
+    border-top:6px solid var(--turquoise);
+
+    border-radius:50%;
+
+    animation:spin 1s linear infinite;
+
+}
+
+body.loaded #loader{
+
+    opacity:0;
+
+    visibility:hidden;
+
+}
+
+/* ===========================================================
+Hero
+=========================================================== */
+
+.hero{
+
+    position:relative;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    background:
+
+        linear-gradient(
+            rgba(0,48,73,.62),
+            rgba(0,48,73,.62)
+        ),
+
+        url("../img/hero.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-attachment:fixed;
+
+}
+
+/* ===========================================================
+Navigation
+=========================================================== */
+
+.navbar{
+
+    position:fixed;
+
+    top:25px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:min(92%,1200px);
+
+    height:78px;
+
+    padding:0 35px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    backdrop-filter:blur(16px);
+
+    background:rgba(255,255,255,.14);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    border-radius:50px;
+
+    z-index:2000;
+
+    transition:.4s;
+
+}
+
+.navbar.scrolled{
+
+    background:rgba(255,255,255,.92);
+
+    box-shadow:var(--shadow);
+
+}
+
+.logo-text{
+
+    color:white;
+
+    font-size:1.8rem;
+
+    font-family:"Montserrat";
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+}
+
+.navbar ul{
+
+    display:flex;
+
+    gap:38px;
+
+}
+
+.navbar li{
+
+    position:relative;
+
+}
+
+.navbar a{
+
+    color:white;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.navbar.scrolled a{
+
+    color:var(--ocean);
+
+}
+
+.navbar a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-7px;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--foam);
+
+    transition:.35s;
+
+}
+
+.navbar a:hover::after{
+
+    width:100%;
+
+}
+
+/* ===========================================================
+Join Button
+=========================================================== */
+
+.join-btn{
+
+    background:var(--turquoise);
+
+    color:white !important;
+
+    padding:14px 26px;
+
+    border-radius:40px;
+
+    transition:.35s;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.18);
+
+}
+
+.join-btn:hover{
+
+    transform:translateY(-3px);
+
+    background:#0bb2b6;
+
+}
+
+/* ===========================================================
+Corner Logo
+=========================================================== */
+
+.logo-corner{
+
+    position:absolute;
+
+    top:135px;
+
+    right:70px;
+
+    z-index:20;
+
+}
+
+.logo-corner img{
+
+    width:175px;
+
+    background:rgba(255,255,255,.92);
+
+    padding:14px;
+
+    border-radius:18px;
+
+    box-shadow:var(--shadow);
+
+    transition:.4s;
+
+}
+
+.logo-corner img:hover{
+
+    transform:scale(1.05);
+
+}
+
+/* ===========================================================
+Hero Content
+=========================================================== */
+
+.hero-overlay{
+
+    width:min(90%,1000px);
+
+    text-align:center;
+
+    color:white;
+
+    z-index:10;
+
+}
+
+.hero-overlay h1{
+
+    color:white;
+
+    margin-bottom:30px;
+
+}
+
+.hero-overlay p{
+
+    color:white;
+
+    max-width:700px;
+
+    margin:auto;
+
+    font-size:1.25rem;
+
+    opacity:.92;
+
+}
+
+/* ===========================================================
+Hero Buttons
+=========================================================== */
+
+.hero-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:22px;
+
+    margin-top:55px;
+
+}
+
+.hero-buttons a{
+
+    padding:18px 34px;
+
+    border-radius:40px;
+
+    font-weight:700;
+
+    transition:.35s;
+
+}
+
+.primary{
+
+    background:var(--turquoise);
+
+    color:white;
+
+}
+
+.primary:hover{
+
+    transform:translateY(-5px);
+
+    background:#13aeb2;
+
+}
+
+.secondary{
+
+    border:2px solid white;
+
+    color:white;
+
+}
+
+.secondary:hover{
+
+    background:white;
+
+    color:var(--ocean);
+
+}
+
+/* ===========================================================
+Animated Waves
+=========================================================== */
+
+.waves{
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-1px;
+
+    width:100%;
+
+    line-height:0;
+
+}
+
+.waves svg{
+
+    width:100%;
+
+    height:170px;
+
+    animation:waveFloat 8s ease-in-out infinite;
+
+}
+
+/* ===========================================================
+Animations
+=========================================================== */
+
+@keyframes spin{
+
+0%{
+
+transform:rotate(0deg);
+
+}
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+@keyframes waveFloat{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(8px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+.fade-up{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:1s;
+
+}
+
+.fade-up.visible{
+
+    opacity:1;
+
+    transform:none;
+
+}

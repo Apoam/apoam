@@ -1,71 +1,435 @@
-<!doctype html>
-<html lang="pt-PT">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>APOAM — Quem somos?</title>
-  <meta name="description" content="APOAM — Associação de Observadores do Ambiente Marinho">
-  <link rel="stylesheet" href="/styles.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>APOAM | Portuguese Association for Marine Observation</title>
+
+    <meta name="description"
+        content="Portuguese Association for Marine Observation. Marine mammals, seabirds, citizen science and conservation.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div>
-        <h1>APOAM</h1>
-        <p class="tagline">Associação de Observadores do Ambiente Marinho</p>
-      </div>
-      <!-- Corner logo (uses existing assets/logo.svg as a placeholder). Replace with your real image file later if desired -->
-      <img src="/assets/logo.svg" alt="Logótipo APOAM" class="corner-logo">
-    </div>
-  </header>
 
-  <nav class="container nav">
-    <a href="#history">Quem somos</a>
-    <a href="#form">Formulário</a>
-    <a href="#contact">Contacto</a>
-  </nav>
+<div id="loader">
+    <div class="spinner"></div>
+</div>
 
-  <main class="container">
-    <section id="history" class="card">
-      <h2>Quem somos</h2>
-      <p class="lead">Os observadores do ambiente marinho são profissionais qualificados que desenvolvem a sua função a bordo de embarcações, na linha de costa ou em plataformas offshore. Estes têm um papel, independente e imparcial, fulcral na consultadoria, recolha e registro de dados relativos à indústria marítima e à sua interacção com o meio ambiente e recursos marinhos.</p>
+<header class="hero">
 
-      <div class="history-grid">
-        <div>
-          <p>Os dados recolhidos podem ser biológicos, não biológicos, de conformidade e ambientais; fundamentais para uma gestão e preservação dos recursos marinhos baseada na ciência.</p>
-          <p>Tendo consciência do papel que têm vindo a desenvolver na prática de suas funções, assim como o seu imprescindível contributo para uma melhor gestão e conservação dos recursos naturais dos Oceanos, decidiram juntar mais uma vez as mãos, para em conjunto evoluírem e continuarem a contribuir para o bem da comunidade.</p>
-        </div>
+<nav class="navbar">
 
-        <aside class="card inset">
-          <h3>O nosso contributo</h3>
-          <ol>
-            <li>Tomada de decisões de gestão dos recursos marinhos por organizações públicas e privadas, regionais, nacionais e internacionais.</li>
-            <li>Avaliação, revisão e cumprimento das medidas de gestão existentes.</li>
-            <li>Implementação, avaliação, revisão e cumprimento de medidas de conservação do meio ambiente.</li>
-            <li>Suporte ao processo de certificação ambiental e biológica dos produtos marinhos, incrementando o seu valor.</li>
-            <li>Avaliação e registo das condições de habitabilidade, laborais e de direitos humanos dos trabalhadores marítimos.</li>
-          </ol>
-        </aside>
-      </div>
+<div class="logo-text">
+APOAM
+</div>
 
-    </section>
+<ul>
 
-    <section id="form" class="card">
-      <h2>Formulário</h2>
-      <p>Substitua o espaço abaixo com o iframe de incorporação do seu Google Form (Enviar → &lt;&gt;). Exemplo de iframe para colar no lugar indicado:</p>
-      <pre class="code">&lt;iframe src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true" width="640" height="800" frameborder="0" marginheight="0" marginwidth="0"&gt;Carregando…&lt;/iframe&gt;</pre>
+<li><a href="#about">About</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#stats">Statistics</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#contact">Contact</a></li>
 
-      <div class="form-placeholder">
-        <p>Local para o formulário (substitua por iframe do Google Forms).</p>
-      </div>
-    </section>
+</ul>
 
-    <footer id="contact" class="card muted">
-      <h3>Contacto</h3>
-      <p>Contacte-nos: <a href="mailto:info@example.org">info@example.org</a></p>
-      <p>Site publicado a partir da branch <code>gh-pages</code> do repositório <code>Apoam/apoam</code>.</p>
-    </footer>
-  </main>
+<a href="#join" class="join-btn">
+Become a Member
+</a>
+
+</nav>
+
+<div class="logo-corner">
+
+<img src="assets/img/apoam-logo.png"
+alt="APOAM">
+
+</div>
+
+<div class="hero-overlay">
+
+<h1>
+
+Observe.<br>
+Protect.<br>
+Inspire.
+
+</h1>
+
+<p>
+
+Promoting the observation, research and conservation of Portugal's marine wildlife.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="#projects" class="primary">
+
+Explore Projects
+
+</a>
+
+<a href="#about" class="secondary">
+
+Learn More
+
+</a>
+
+</div>
+
+</div>
+
+<div class="waves">
+
+<svg viewBox="0 0 1440 320">
+
+<path fill="#ffffff"
+fill-opacity="1"
+d="M0,128L60,144C120,160,240,192,360,192C480,192,600,160,720,138.7C840,117,960,107,1080,122.7C1200,139,1320,181,1380,202.7L1440,224L1440,320L0,320Z"></path>
+
+</svg>
+
+</div>
+
+</header>
+
+<section id="about" class="section">
+
+<div class="container">
+
+<div class="text">
+
+<h2>Who We Are</h2>
+
+<p>
+
+APOAM is dedicated to the observation and protection of Portugal's marine biodiversity.
+
+Through scientific initiatives, public engagement and citizen science,
+we contribute to the understanding and preservation of marine mammals,
+seabirds and coastal ecosystems.
+
+</p>
+
+<a href="#" class="button">
+
+Read More
+
+</a>
+
+</div>
+
+<div class="image">
+
+<img src="assets/img/about.jpg">
+
+</div>
+
+</div>
+
+</section>
+
+<section id="projects" class="section alt">
+
+<h2 class="center">
+
+Our Projects
+
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<div class="icon">
+
+🐬
+
+</div>
+
+<h3>
+
+Marine Mammals
+
+</h3>
+
+<p>
+
+Monitoring dolphins, whales and other cetaceans.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon">
+
+🐦
+
+</div>
+
+<h3>
+
+Seabirds
+
+</h3>
+
+<p>
+
+Research and conservation of coastal bird populations.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon">
+
+🌊
+
+</div>
+
+<h3>
+
+Coastal Monitoring
+
+</h3>
+
+<p>
+
+Protecting fragile marine habitats.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon">
+
+📷
+
+</div>
+
+<h3>
+
+Citizen Science
+
+</h3>
+
+<p>
+
+Helping volunteers contribute valuable observations.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="stats">
+
+<div class="stats-container">
+
+<div>
+
+<h2 class="counter" data-target="120">
+
+0
+
+</h2>
+
+<p>
+
+Members
+
+</p>
+
+</div>
+
+<div>
+
+<h2 class="counter" data-target="350">
+
+0
+
+</h2>
+
+<p>
+
+Species Recorded
+
+</p>
+
+</div>
+
+<div>
+
+<h2 class="counter" data-target="25">
+
+0
+
+</h2>
+
+<p>
+
+Projects
+
+</p>
+
+</div>
+
+<div>
+
+<h2 class="counter" data-target="1800">
+
+0
+
+</h2>
+
+<p>
+
+Observations
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="gallery" class="section">
+
+<h2 class="center">
+
+Gallery
+
+</h2>
+
+<div class="gallery">
+
+<img src="assets/img/gallery1.jpg">
+
+<img src="assets/img/gallery2.jpg">
+
+<img src="assets/img/gallery3.jpg">
+
+<img src="assets/img/gallery4.jpg">
+
+<img src="assets/img/gallery5.jpg">
+
+<img src="assets/img/gallery6.jpg">
+
+</div>
+
+</section>
+
+<section id="join" class="cta">
+
+<h2>
+
+Help protect Portugal's marine wildlife.
+
+</h2>
+
+<p>
+
+Become part of APOAM and make a difference.
+
+</p>
+
+<a href="#contact">
+
+Become a Volunteer
+
+</a>
+
+</section>
+
+<footer id="contact">
+
+<div class="footer-grid">
+
+<div>
+
+<h3>
+
+APOAM
+
+</h3>
+
+<p>
+
+Portuguese Association for Marine Observation
+
+</p>
+
+</div>
+
+<div>
+
+<h4>
+
+Links
+
+</h4>
+
+<ul>
+
+<li><a href="#">About</a></li>
+<li><a href="#">Projects</a></li>
+<li><a href="#">Gallery</a></li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h4>
+
+Contact
+
+</h4>
+
+<p>
+
+info@apoam.pt
+
+</p>
+
+</div>
+
+</div>
+
+<p class="copyright">
+
+© 2026 APOAM — All Rights Reserved
+
+</p>
+
+</footer>
+
+<script src="assets/js/main.js"></script>
 
 </body>
+
 </html>
