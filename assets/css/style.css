@@ -209,83 +209,151 @@ body.loaded #loader{
 HERO
 =========================================================== */
 
+/* ===========================================================
+HERO
+=========================================================== */
+
 .hero{
 
     position:relative;
 
+    width:100%;
+
     height:100vh;
+
+    min-height:850px;
 
     overflow:hidden;
 
-    display:flex;
+}
 
-    justify-content:center;
+/* Background image */
 
-    align-items:center;
+.hero-image{
 
-    background:
-    linear-gradient(
-        rgba(0,40,60,.45),
-        rgba(0,55,80,.55)
-    ),
-    url("../img/hero.jpg");
+    position:absolute;
 
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    object-position:center;
+
+    z-index:-3;
 
 }
+
+/* Dark overlay */
 
 .hero-overlay{
 
     position:absolute;
+
     inset:0;
 
     background:
-        radial-gradient(
-            circle at top,
-            rgba(255,255,255,.08),
-            transparent 55%
+
+        linear-gradient(
+
+            rgba(0,40,60,.20),
+
+            rgba(0,40,60,.55)
+
         );
 
+    z-index:-2;
+
 }
+
+/* Navigation */
+
+.navbar{
+
+    position:absolute;
+
+    top:30px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:min(1200px,92%);
+
+    height:75px;
+
+    padding:0 35px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(16px);
+
+    border-radius:60px;
+
+    border:1px solid rgba(255,255,255,.20);
+
+    z-index:100;
+
+}
+
+.brand{
+
+    color:white;
+
+    font-size:1.7rem;
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+}
+
+/* Hero content */
 
 .hero-content{
 
-    position:relative;
+    position:absolute;
 
-    z-index:5;
+    left:50%;
 
-    text-align:center;
+    top:55%;
+
+    transform:translate(-50%,-50%);
 
     width:min(900px,90%);
 
+    text-align:center;
+
 }
+
+/* Logo */
 
 .hero-logo{
 
-    width:260px;
+    width:340px;
 
-    margin:0 auto 40px;
+    max-width:90%;
 
-    padding:20px;
+    margin-bottom:35px;
 
-    border-radius:24px;
+    background:rgba(255,255,255,.92);
 
-    background:rgba(255,255,255,.90);
+    padding:22px;
 
-    backdrop-filter:blur(12px);
+    border-radius:22px;
 
     box-shadow:
-    0 25px 60px rgba(0,0,0,.25);
 
-    transition:.4s;
-
-}
-
-.hero-logo:hover{
-
-    transform:translateY(-8px) scale(1.03);
+        0 25px 60px rgba(0,0,0,.25);
 
 }
 
@@ -293,12 +361,13 @@ HERO
 
     color:white;
 
-    font-size:4.8rem;
+    font-size:4.5rem;
 
-    margin-bottom:20px;
+    margin-bottom:18px;
 
     text-shadow:
-    0 4px 18px rgba(0,0,0,.4);
+
+        0 5px 25px rgba(0,0,0,.35);
 
 }
 
@@ -308,14 +377,25 @@ HERO
 
     font-size:1.3rem;
 
-    opacity:.95;
-
     margin-bottom:45px;
-
-    letter-spacing:1px;
 
 }
 
+.hero-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:25px;
+
+}
+
+.hero-buttons a{
+
+    min-width:220px;
+
+}
 /* ===========================================================
 Navigation
 =========================================================== */
