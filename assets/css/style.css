@@ -235,61 +235,137 @@ HERO
 
 }
 
-/*--------------------------
-Navigation
---------------------------*/
+/* ===========================================================
+   NAVIGATION
+=========================================================== */
 
-.navbar{
+.navbar {
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
 
-    position:absolute;
+    width: min(92%, 1100px);
+    min-height: 70px;
 
-    top:30px;
+    padding: 0 30px;
 
-    left:50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    transform:translateX(-50%);
+    /* Fundo mais sólido */
+    background: rgba(255, 255, 255, 0.94);
 
-    z-index:100;
+    /* Efeito ligeiro de vidro */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+
+    box-shadow: 0 8px 30px rgba(0, 40, 60, 0.12);
+
+    z-index: 1000;
 }
 
-.navbar ul{
 
-    display:flex;
+/* Menu perfeitamente centrado */
 
-    gap:50px;
+.navbar ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    list-style:none;
+    gap: 38px;
 
-    padding:18px 45px;
+    margin: 0;
+    padding: 0;
 
-    border-radius:60px;
-
-    background:rgba(255,255,255,.18);
-
-    backdrop-filter:blur(18px);
-
-    border:1px solid rgba(255,255,255,.25);
-
+    list-style: none;
 }
 
-.navbar a{
 
-    color:white;
+/* Cada item */
 
-    font-weight:600;
-
-    text-decoration:none;
-
-    transition:.3s;
-
+.navbar li {
+    position: relative;
 }
 
-.navbar a:hover{
 
-    color:#94d2bd;
+/* Links */
 
+.navbar a {
+    position: relative;
+
+    display: inline-block;
+
+    padding: 8px 2px;
+
+    color: var(--ocean);
+
+    font-weight: 600;
+    font-size: 0.95rem;
+
+    text-decoration: none;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
 }
+
+
+/* Linha por baixo */
+
+.navbar a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--turquoise);
+
+    transform: translateX(-50%);
+
+    transition: width 0.3s ease;
+}
+
+
+/* Hover */
+
+.navbar a:hover {
+    color: var(--turquoise);
+
+    transform: translateY(-1px);
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+
+/* Quando a página faz scroll */
+
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.97);
+
+    box-shadow:
+        0 8px 30px rgba(0, 40, 60, 0.16);
+}
+
+.navbar.scrolled a {
+    color: var(--ocean);
+}
+
+.navbar.scrolled a:hover {
+    color: var(--turquoise);
+}
+
 
 /*--------------------------
 Hero Image
