@@ -2079,3 +2079,18 @@ transform: translateX(4px);
 }
 
 }
+
+
+.about-content ul {
+    margin: 20px 0 25px;
+    padding-left: 25px;
+}
+
+.about-content li {
+    margin-bottom: 12px;
+    line-height: 1.7;
+}
+
+.about-content li::marker {
+    color: var(--turquoise);
+}
