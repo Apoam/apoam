@@ -1,18 +1,16 @@
-# Apoam — placeholder site
+# APOAM — site em Português
 
-This repository contains a simple single-page website scaffold pushed to the `gh-pages` branch so GitHub Pages can serve a project site.
+Este repositório contém o site de uma página da APOAM, preparado para ser disponibilizado através do GitHub Pages.
 
-Live URL (project site): https://Apoam.github.io/apoam
+## Ficheiros
 
-Files added:
-- `index.html` — single-page HTML with placeholders for the logo, association history, and an embedded Google Form.
-- `styles.css` — simple responsive styles.
-- `assets/logo.svg` — placeholder logo (SVG).
-- `.nojekyll` — prevents Jekyll processing.
+- `index.html` — página principal do site, com o conteúdo da associação.
+- `assets/css/style.css` — estilos principais.
+- `assets/css/responsive.css` — estilos para dispositivos móveis e diferentes tamanhos de ecrã.
+- `assets/js/main.js` — funcionalidades e animações JavaScript.
+- `assets/img/` — imagens utilizadas pelo site.
+- `.nojekyll` — impede o processamento pelo Jekyll.
 
-How to replace placeholders:
-- Logo: replace `assets/logo.svg` with your logo (same filename) or update the `img` src in `index.html`.
-- History text: edit the content in the `#history` section of `index.html`.
-- Google Form: open your Google Form, click Send → &lt;&gt; (embed), copy the iframe and paste it into the `#form` section in `index.html` (replace the commented example iframe).
+## Nota
 
-If the site does not appear immediately, wait a minute for GitHub Pages to build. If you prefer the site served from a different branch or from `/docs`, adjust the Pages settings in the repository Settings → Pages.
+O conteúdo textual apresentado no site foi traduzido para Português de Portugal, mantendo a estrutura e o funcionamento do código original.
