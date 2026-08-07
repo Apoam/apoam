@@ -617,120 +617,133 @@ transform:translate(-50%,-10px);
 
 }
 
-}/* ===========================================================
-Navigation
+}
+
+/* ===========================================================
+   NAVIGATION
 =========================================================== */
 
-.navbar{
+.navbar {
+    position: absolute;
 
-    position:absolute;
+    top: 28px;
+    left: 50%;
+    transform: translateX(-50%);
 
-    top:30px;
+    /* A largura passa a acompanhar o menu */
+    width: fit-content;
 
-    left:50%;
-
-    transform:translateX(-50%);
-
-    width:min(92%,1200px);
-
-    height:78px;
-
-    padding:0 35px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    backdrop-filter:blur(16px);
-
-    background:rgba(255,255,255,.14);
-
-    border:1px solid rgba(255,255,255,.18);
-
-    border-radius:50px;
-
-    z-index:1000;
-
+    z-index: 1000;
 }
 
-.navbar.scrolled{
 
-    background:rgba(255,255,255,.92);
+/* Barra */
 
-    box-shadow:var(--shadow);
+.navbar ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    gap: 42px;
+
+    margin: 0;
+    padding: 17px 38px;
+
+    list-style: none;
+
+    /* BRANCO — não cinzento */
+    background: rgba(255, 255, 255, 0.97);
+
+    border: 1px solid rgba(255, 255, 255, 1);
+
+    border-radius: 50px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 48, 73, 0.12);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    transition:
+        box-shadow 0.3s ease,
+        background 0.3s ease;
 }
 
-.logo-text{
 
-    color:white;
+/* Links */
 
-    font-size:1.8rem;
+.navbar a {
+    position: relative;
 
-    font-family:"Montserrat";
+    display: block;
 
-    font-weight:800;
+    color: var(--ocean);
 
-    letter-spacing:2px;
+    font-size: 0.95rem;
+    font-weight: 600;
 
+    white-space: nowrap;
+
+    text-decoration: none;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
 }
 
-.navbar ul{
 
-    display:flex;
+/* Linha inferior */
 
-    gap:38px;
+.navbar a::after {
+    content: "";
 
+    position: absolute;
+
+    left: 50%;
+    bottom: -5px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--turquoise);
+
+    transform: translateX(-50%);
+
+    transition: width 0.25s ease;
 }
 
-.navbar li{
 
-    position:relative;
+/* Hover */
 
+.navbar a:hover {
+    color: var(--turquoise);
+
+    transform: translateY(-1px);
 }
 
-.navbar a{
-
-    color:white;
-
-    font-weight:600;
-
-    transition:var(--transition);
-
+.navbar a:hover::after {
+    width: 100%;
 }
 
-.navbar.scrolled a{
 
-    color:var(--ocean);
+/* Link ativo */
 
+.navbar a.active {
+    color: var(--turquoise);
 }
 
-.navbar a::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-
-    bottom:-7px;
-
-    width:0;
-
-    height:2px;
-
-    background:var(--foam);
-
-    transition:.35s;
-
+.navbar a.active::after {
+    width: 100%;
 }
 
-.navbar a:hover::after{
 
-    width:100%;
+/* Quando faz scroll */
 
+.navbar.scrolled ul {
+    background: rgba(255, 255, 255, 0.99);
+
+    box-shadow:
+        0 10px 30px rgba(0, 48, 73, 0.16);
 }
 
 /* ===========================================================

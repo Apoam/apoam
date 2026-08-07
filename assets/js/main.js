@@ -294,7 +294,7 @@ document.querySelectorAll(".card").forEach(card=>{
 /* ==========================================================
 NAVBAR SHADOW
 ========================================================== */
-
+/*
 window.addEventListener("scroll",()=>{
 
     const nav=document.querySelector(".navbar");
@@ -304,6 +304,7 @@ window.addEventListener("scroll",()=>{
         :"none";
 
 });
+*/
 
 /* ==========================================================
 IMAGE ZOOM
