@@ -129,33 +129,19 @@ function counterAnimation(){
 
                 current+=step;
 
-                if(current<target){
-
-                    counter.textContent=Math.floor(current);
-
-                    requestAnimationFrame(update);
-
-                }else{
-
-                    counter.textContent=target.toLocaleString();
-
-                }
-
-            }
-
-            update();
-
-            observer.unobserve(counter);
-
-        });
-
-    },{
-
-        threshold:.5
-
-    });
-
-    counters.forEach(c=>observer.observe(c));
+                if(current<target){ counter.textContent=Math.floor(current);
+          requestAnimationFrame(update);
+          }else{
+          counter.textContent=target.toLocaleString();
+          }
+          }
+          update();
+          observer.unobserve(counter);
+          });
+          },{
+          threshold:.5
+          });
+          counters.forEach(c=>observer.observe(c));
 
 }
 
