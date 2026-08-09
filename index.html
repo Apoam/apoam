@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
-
 <head>
-	<link rel="stylesheet" href="assets/css/responsive.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -17,8 +15,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet">
 
+    <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/css/style.css">
-
 </head>
 
 <body>
@@ -29,467 +27,241 @@
 
 <header class="hero">
 
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Navegação principal">
 
- <a href="#" class="nav-logo">
-    <img src="assets/img/apoam-logo-simples.png" alt="APOAM">
-</a>
+        <a href="#" class="nav-logo" aria-label="APOAM - página inicial">
+            <!-- Usa o mesmo logo que já funciona no hero -->
+            <img src="assets/img/apoam-logo.png" alt="APOAM">
+        </a>
 
-    <button class="menu-toggle"
-            type="button"
-            aria-label="Abrir menu"
-            aria-expanded="false">
+        <ul class="nav-menu">
+            <li><a href="#about">Quem Somos</a></li>
+            <li><a href="#projects">Projetos</a></li>
+            <li><a href="#gallery">Galeria</a></li>
+            <li><a href="#join">Torna-te Sócio</a></li>
+            <li><a href="#contact">Contactos</a></li>
+        </ul>
 
-        <span></span>
-        <span></span>
-        <span></span>
+        <button class="menu-toggle"
+                type="button"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="nav-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
-    </button>
-
-    <ul class="nav-menu">
-
-        <li>
-            <a href="#about">Quem Somos</a>
-        </li>
-
-        <li>
-            <a href="#projects">Projetos</a>
-        </li>
-
-        <li>
-            <a href="#gallery">Galeria</a>
-        </li>
-
-        <li>
-            <a href="#join">Torna-te Sócio</a>
-        </li>
-
-        <li>
-            <a href="#contact">Contactos</a>
-        </li>
-
-    </ul>
-
-</nav>
+    </nav>
 
     <div class="hero-content">
-
         <img
             src="assets/img/apoam-logo.png"
             alt="APOAM - Associação Portuguesa de Observadores do Ambiente Marinho"
             class="hero-logo">
-
     </div>
 
     <div class="scroll-indicator">
-
         ↓ Deslize
-
     </div>
 
 </header>
 
 <section id="about" class="section">
+    <div class="container">
 
-<div class="container">
+        <div class="text">
+            <h2>Quem Somos</h2>
 
-<div class="text">
+            <p>
+                A APOAM – Associação Portuguesa de Observadores do Ambiente Marinho
+                reúne profissionais qualificados que desenvolvem a sua atividade a bordo
+                de embarcações, na linha de costa ou em plataformas offshore, desempenhando
+                um papel independente e imparcial na observação e monitorização do ambiente
+                marinho.
+            </p>
 
-<h2>Quem Somos</h2>
+            <p>
+                Os Observadores do Ambiente Marinho desempenham uma função fundamental na
+                consultoria, recolha e registo de dados relacionados com a atividade
+                marítima e com a sua interação com o meio ambiente e os recursos marinhos.
+                Os dados recolhidos podem ser de natureza biológica, não biológica, de
+                conformidade e ambiental, constituindo uma base essencial para uma gestão
+                sustentável e uma preservação dos recursos marinhos assentes no conhecimento
+                e na evidência científica.
+            </p>
 
-<p>
-    A APOAM – Associação Portuguesa de Observadores do Ambiente Marinho
-    reúne profissionais qualificados que desenvolvem a sua atividade a bordo
-    de embarcações, na linha de costa ou em plataformas offshore, desempenhando
-    um papel independente e imparcial na observação e monitorização do ambiente
-    marinho.
-</p>
+            <p>
+                Através da observação <em>in loco</em>, os Observadores do Ambiente Marinho
+                prestam um contributo essencial:
+            </p>
 
-<p>
-    Os Observadores do Ambiente Marinho desempenham uma função fundamental na
-    consultoria, recolha e registo de dados relacionados com a atividade
-    marítima e com a sua interação com o meio ambiente e os recursos marinhos.
-    Os dados recolhidos podem ser de natureza biológica, não biológica, de
-    conformidade e ambiental, constituindo uma base essencial para uma gestão
-    sustentável e uma preservação dos recursos marinhos assentes no conhecimento
-    e na evidência científica.
-</p>
+            <ul>
+                <li>na tomada de decisões relativas à gestão dos recursos marinhos por organizações públicas e privadas, a nível regional, nacional e internacional;</li>
+                <li>na avaliação, revisão e verificação do cumprimento das medidas de gestão existentes;</li>
+                <li>na implementação, avaliação, revisão e verificação do cumprimento de medidas de conservação e proteção do meio ambiente;</li>
+                <li>nos processos de certificação ambiental e biológica dos produtos marinhos, contribuindo para a valorização e credibilização destes produtos;</li>
+                <li>na avaliação e registo das condições de habitabilidade e de trabalho, bem como do respeito pelos direitos humanos dos trabalhadores marítimos.</li>
+            </ul>
 
-<p>
-    Através da observação <em>in loco</em>, os Observadores do Ambiente Marinho
-    prestam um contributo essencial:
-</p>
+            <p>
+                Conscientes do papel que têm vindo a desempenhar no exercício das suas
+                funções e do seu imprescindível contributo para uma melhor gestão,
+                conservação e utilização sustentável dos recursos naturais dos Oceanos,
+                os Observadores do Ambiente Marinho decidiram unir esforços e criar uma
+                estrutura comum.
+            </p>
 
-<ul>
-    <li>
-        na tomada de decisões relativas à gestão dos recursos marinhos por
-        organizações públicas e privadas, a nível regional, nacional e
-        internacional;
-    </li>
+            <p>
+                É neste espírito de união, cooperação e responsabilidade que nasce a
+                APOAM, com o propósito de representar, valorizar e fortalecer o papel dos
+                Observadores do Ambiente Marinho, promovendo a partilha de conhecimento,
+                a qualificação profissional e a defesa de um ambiente marinho mais
+                sustentável.
+            </p>
 
-    <li>
-        na avaliação, revisão e verificação do cumprimento das medidas de
-        gestão existentes;
-    </li>
+            <p>
+                Juntos, continuamos a trabalhar para contribuir para uma melhor gestão
+                dos Oceanos e para o bem da comunidade.
+            </p>
 
-    <li>
-        na implementação, avaliação, revisão e verificação do cumprimento de
-        medidas de conservação e proteção do meio ambiente;
-    </li>
+            <a href="#projects" class="button">Saber Mais</a>
+        </div>
 
-    <li>
-        nos processos de certificação ambiental e biológica dos produtos
-        marinhos, contribuindo para a valorização e credibilização destes
-        produtos;
-    </li>
+        <div class="image">
+            <img src="assets/img/about.jpg" alt="Ambiente marinho">
+        </div>
 
-    <li>
-        Na avaliação e registo das condições de habitabilidade e de trabalho,
-        bem como do respeito pelos direitos humanos dos trabalhadores
-        marítimos.
-    </li>
-</ul>
-
-<p>
-    Conscientes do papel que têm vindo a desempenhar no exercício das suas
-    funções e do seu imprescindível contributo para uma melhor gestão,
-    conservação e utilização sustentável dos recursos naturais dos Oceanos,
-    os Observadores do Ambiente Marinho decidiram unir esforços e criar uma
-    estrutura comum.
-</p>
-
-<p>
-    É neste espírito de união, cooperação e responsabilidade que nasce a
-    APOAM, com o propósito de representar, valorizar e fortalecer o papel dos
-    Observadores do Ambiente Marinho, promovendo a partilha de conhecimento,
-    a qualificação profissional e a defesa de um ambiente marinho mais
-    sustentável.
-</p>
-
-<p>
-    Juntos, continuamos a trabalhar para contribuir para uma melhor gestão
-    dos Oceanos e para o bem da comunidade.
-</p>
-
-<a href="#" class="button">
-
-Saber Mais
-
-</a>
-
-</div>
-
-<div class="image">
-
-<img src="assets/img/about.jpg">
-
-</div>
-
-</div>
-
+    </div>
 </section>
 
 <section id="projects" class="section alt">
+    <h2 class="center">Os Nossos Projetos</h2>
 
-<h2 class="center">
+    <div class="cards">
 
-Os Nossos Projetos
+        <div class="card">
+            <div class="icon">🐬</div>
+            <h3>Mamíferos Marinhos</h3>
+            <p>Monitorização de golfinhos, baleias e outros cetáceos.</p>
+        </div>
 
-</h2>
+        <div class="card">
+            <div class="icon">🐦</div>
+            <h3>Aves Marinhas</h3>
+            <p>Investigação e conservação das populações de aves costeiras.</p>
+        </div>
 
-<div class="cards">
+        <div class="card">
+            <div class="icon">🌊</div>
+            <h3>Monitorização Costeira</h3>
+            <p>Proteção de habitats marinhos vulneráveis.</p>
+        </div>
 
-<div class="card">
+        <div class="card">
+            <div class="icon">📷</div>
+            <h3>Ciência Cidadã</h3>
+            <p>Ajudamos voluntários a contribuir com observações importantes.</p>
+        </div>
 
-<div class="icon">
-
-🐬
-
-</div>
-
-<h3>
-
-Mamíferos Marinhos
-
-</h3>
-
-<p>
-
-Monitorização de golfinhos, baleias e outros cetáceos.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<div class="icon">
-
-🐦
-
-</div>
-
-<h3>
-
-Aves Marinhas
-
-</h3>
-
-<p>
-
-Investigação e conservação das populações de aves costeiras.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<div class="icon">
-
-🌊
-
-</div>
-
-<h3>
-
-Monitorização Costeira
-
-</h3>
-
-<p>
-
-Proteção de habitats marinhos vulneráveis.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<div class="icon">
-
-📷
-
-</div>
-
-<h3>
-
-Ciência Cidadã
-
-</h3>
-
-<p>
-
-Ajudamos voluntários a contribuir com observações importantes.
-
-</p>
-
-</div>
-
-</div>
-
+    </div>
 </section>
 
 <section id="stats">
+    <div class="stats-container">
 
-<div class="stats-container">
+        <div>
+            <h2 class="counter" data-target="120">0</h2>
+            <p>Membros</p>
+        </div>
 
-<div>
+        <div>
+            <h2 class="counter" data-target="350">0</h2>
+            <p>Espécies Registadas</p>
+        </div>
 
-<h2 class="counter" data-target="120">
+        <div>
+            <h2 class="counter" data-target="25">0</h2>
+            <p>Projetos</p>
+        </div>
 
-0
+        <div>
+            <h2 class="counter" data-target="1800">0</h2>
+            <p>Observações</p>
+        </div>
 
-</h2>
-
-<p>
-
-Membros
-
-</p>
-
-</div>
-
-<div>
-
-<h2 class="counter" data-target="350">
-
-0
-
-</h2>
-
-<p>
-
-Espécies Registadas
-
-</p>
-
-</div>
-
-<div>
-
-<h2 class="counter" data-target="25">
-
-0
-
-</h2>
-
-<p>
-
-Projects
-
-</p>
-
-</div>
-
-<div>
-
-<h2 class="counter" data-target="1800">
-
-0
-
-</h2>
-
-<p>
-
-Observações
-
-</p>
-
-</div>
-
-</div>
-
+    </div>
 </section>
 
 <section id="gallery" class="section">
+    <h2 class="center">Galeria</h2>
 
-<h2 class="center">
-
-Galeria
-
-</h2>
-
-<div class="gallery">
-
-<img src="assets/img/gallery1.jpg">
-
-<img src="assets/img/gallery2.jpg">
-
-<img src="assets/img/gallery3.jpg">
-
-<img src="assets/img/gallery4.jpg">
-
-<img src="assets/img/gallery5.jpg">
-
-<img src="assets/img/gallery6.jpg">
-
-</div>
-
+    <div class="gallery">
+        <img src="assets/img/gallery1.jpg" alt="Galeria APOAM 1" loading="lazy">
+        <img src="assets/img/gallery2.jpg" alt="Galeria APOAM 2" loading="lazy">
+        <img src="assets/img/gallery3.jpg" alt="Galeria APOAM 3" loading="lazy">
+        <img src="assets/img/gallery4.jpg" alt="Galeria APOAM 4" loading="lazy">
+        <img src="assets/img/gallery5.jpg" alt="Galeria APOAM 5" loading="lazy">
+        <img src="assets/img/gallery6.jpg" alt="Galeria APOAM 6" loading="lazy">
+    </div>
 </section>
 
 <section id="join" class="volunteer-section">
+    <div class="volunteer-box">
 
-<div class="volunteer-box">
+        <div class="volunteer-icon" aria-hidden="true">🤝</div>
 
-    <div class="volunteer-icon">
-        <i class="fas fa-hands-helping"></i>
+        <span class="volunteer-label">PARTICIPA CONNOSCO</span>
+
+        <h2>Torna-te Associado</h2>
+
+        <p>Queres fazer parte da APOAM?</p>
+
+        <p>
+            Junta-te à nossa Associação e faz parte desta comunidade,
+            ajudando-nos a dar mais visibilidade à nossa atividade!
+        </p>
+
+        <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfd4ExLeXyH6hZwtt5jAKZhvhOXpvbOx9Iv904gLvtOWjXuGQ/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="volunteer-button">
+            Quero ser Associado
+            <span aria-hidden="true">→</span>
+        </a>
+
     </div>
-
-    <span class="volunteer-label">PARTICIPA CONNOSCO</span>
-
-    <h2>Torna-te Associado</h2>
-
-    <p>
-        Queres fazer parte da APOAM?
-    </p>
-
-    <p>
-        Junta-te à nossa Associação e faz parte desta comunidade, ajudando-nos a dar mais visibilidade à nossa actividade!
-    </p>
-
-    <a
-        href="https://docs.google.com/forms/d/e/1FAIpQLSfd4ExLeXyH6hZwtt5jAKZhvhOXpvbOx9Iv904gLvtOWjXuGQ/viewform"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="volunteer-button">
-        Quero ser Associado
-        <i class="fas fa-arrow-right"></i>
-    </a>
-
-</div>
-
 </section>
 
-
-
 <footer id="contact">
+    <div class="footer-grid">
 
-<div class="footer-grid">
+        <div>
+            <h3>APOAM</h3>
+            <p>Associação Portuguesa de Observadores do Ambiente Marinho</p>
+        </div>
 
-<div>
+        <div>
+            <h4>Ligações</h4>
+            <ul>
+                <li><a href="#about">Quem Somos</a></li>
+                <li><a href="#projects">Projetos</a></li>
+                <li><a href="#gallery">Galeria</a></li>
+            </ul>
+        </div>
 
-<h3>
+        <div>
+            <h4>Contactos</h4>
+            <p>info@apoam.pt</p>
+        </div>
 
-APOAM
+    </div>
 
-</h3>
-
-<p>
-
-Associação Portuguesa de Observadores do Ambiente Marinho
-
-</p>
-
-</div>
-
-<div>
-
-<h4>
-
-Ligações
-
-</h4>
-
-<ul>
-
-<li><a href="#">Sobre Nós</a></li>
-<li><a href="#">Projetos</a></li>
-<li><a href="#">Galeria</a></li>
-
-</ul>
-
-</div>
-
-<div>
-
-<h4>
-
-Contactos
-
-</h4>
-
-<p>
-
-info@apoam.pt
-
-</p>
-
-</div>
-
-</div>
-
-<p class="copyright">
-
-© 2026 APOAM — Todos os direitos reservados
-
-</p>
-
+    <p class="copyright">© 2026 APOAM — Todos os direitos reservados</p>
 </footer>
 
 <script src="assets/js/main.js"></script>
 
 </body>
-
 </html>

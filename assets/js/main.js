@@ -1,94 +1,81 @@
 /*
 ===========================================================
-APOAM
-Main JavaScript
+APOAM - Main JavaScript
 ===========================================================
 */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    loader();
-    navbar();
-    revealElements();
-    counterAnimation();
-    progressBar();
-    smoothScrolling();
-    activeMenu();
-    heroParallax();
-    cardHover();
-    imageZoom();
-    floatingEffect();
+    initLoader();
+    initNavbar();
+    initReveal();
+    initCounters();
+    initProgressBar();
+    initSmoothScrolling();
+    initActiveMenu();
+    initHeroParallax();
+    initGallery();
 
 });
 
-/* LOADER */
-function loader(){
+function initLoader(){
 
-    window.addEventListener("load", () => {
-        document.body.classList.add("loaded");
-    });
+    const hide = () => document.body.classList.add("loaded");
 
-}
-
-/* NAVBAR */
-function navbar(){
-
-    const nav = document.querySelector(".navbar");
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navMenu = document.querySelector(".nav-menu");
-
-    if(!nav) return;
-
-    const updateNav = () => {
-        nav.classList.toggle("scrolled", window.scrollY > 80);
-    };
-
-    updateNav();
-    window.addEventListener("scroll", updateNav, {passive:true});
-
-    if(menuToggle && navMenu){
-
-        menuToggle.addEventListener("click", () => {
-
-            const open = nav.classList.toggle("menu-open");
-
-            menuToggle.classList.toggle("active", open);
-
-            menuToggle.setAttribute(
-                "aria-expanded",
-                open ? "true" : "false"
-            );
-
-            menuToggle.setAttribute(
-                "aria-label",
-                open ? "Fechar menu" : "Abrir menu"
-            );
-
-        });
-
-        navMenu.querySelectorAll("a").forEach(link => {
-
-            link.addEventListener("click", () => {
-
-                nav.classList.remove("menu-open");
-                menuToggle.classList.remove("active");
-
-                menuToggle.setAttribute("aria-expanded", "false");
-                menuToggle.setAttribute("aria-label", "Abrir menu");
-
-            });
-
-        });
-
+    if(document.readyState === "complete"){
+        hide();
+    }else{
+        window.addEventListener("load", hide, {once:true});
     }
 
 }
 
-/* SCROLL REVEAL */
-function revealElements(){
+function initNavbar(){
+
+    const nav = document.querySelector(".navbar");
+    const toggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".nav-menu");
+
+    if(!nav) return;
+
+    const updateShadow = () => {
+        nav.classList.toggle("scrolled", window.scrollY > 20);
+    };
+
+    updateShadow();
+    window.addEventListener("scroll", updateShadow, {passive:true});
+
+    if(!toggle || !menu) return;
+
+    toggle.addEventListener("click", () => {
+
+        const open = nav.classList.toggle("menu-open");
+
+        toggle.classList.toggle("active", open);
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        toggle.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
+
+    });
+
+    menu.querySelectorAll("a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            nav.classList.remove("menu-open");
+            toggle.classList.remove("active");
+            toggle.setAttribute("aria-expanded", "false");
+            toggle.setAttribute("aria-label", "Abrir menu");
+
+        });
+
+    });
+
+}
+
+function initReveal(){
 
     const elements = document.querySelectorAll(
-        ".card,.text,.image,.gallery img,.stats-container>div,.cta,.footer-grid"
+        ".card, .text, .image, .gallery img, .stats-container > div, .footer-grid"
     );
 
     if(!("IntersectionObserver" in window)){
@@ -96,7 +83,7 @@ function revealElements(){
         return;
     }
 
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver(entries => {
 
         entries.forEach(entry => {
 
@@ -110,50 +97,50 @@ function revealElements(){
     }, {threshold:.15});
 
     elements.forEach(el => {
+
         el.classList.add("reveal");
         observer.observe(el);
+
     });
 
 }
 
-/* COUNTERS */
-function counterAnimation(){
+function initCounters(){
 
     const counters = document.querySelectorAll(".counter");
 
     if(!("IntersectionObserver" in window)){
-        counters.forEach(counter => {
-            counter.textContent = Number(counter.dataset.target || 0).toLocaleString();
-        });
+        counters.forEach(c => c.textContent = Number(c.dataset.target || 0).toLocaleString());
         return;
     }
 
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver(entries => {
 
         entries.forEach(entry => {
 
             if(!entry.isIntersecting) return;
 
             const counter = entry.target;
-            const target = parseInt(counter.dataset.target, 10) || 0;
-            const duration = 1800;
-            const step = Math.max(1, target / (duration / 16));
-            let current = 0;
+            const target = Number(counter.dataset.target || 0);
+            const duration = 1600;
+            const start = performance.now();
 
-            function update(){
+            const update = now => {
 
-                current += step;
+                const progress = Math.min((now - start) / duration, 1);
+                const value = Math.floor(target * progress);
 
-                if(current < target){
-                    counter.textContent = Math.floor(current);
+                counter.textContent = value.toLocaleString();
+
+                if(progress < 1){
                     requestAnimationFrame(update);
                 }else{
                     counter.textContent = target.toLocaleString();
                 }
 
-            }
+            };
 
-            update();
+            requestAnimationFrame(update);
             observer.unobserve(counter);
 
         });
@@ -164,8 +151,7 @@ function counterAnimation(){
 
 }
 
-/* PROGRESS */
-function progressBar(){
+function initProgressBar(){
 
     const bar = document.createElement("div");
     bar.className = "progress-bar";
@@ -173,11 +159,8 @@ function progressBar(){
 
     const update = () => {
 
-        const height =
-            document.documentElement.scrollHeight - window.innerHeight;
-
-        const progress =
-            height > 0 ? (window.scrollY / height) * 100 : 0;
+        const total = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = total > 0 ? (window.scrollY / total) * 100 : 0;
 
         bar.style.width = progress + "%";
 
@@ -188,14 +171,13 @@ function progressBar(){
 
 }
 
-/* SMOOTH SCROLL */
-function smoothScrolling(){
+function initSmoothScrolling(){
 
     document.querySelectorAll("a[href^='#']").forEach(anchor => {
 
-        anchor.addEventListener("click", function(e){
+        anchor.addEventListener("click", event => {
 
-            const selector = this.getAttribute("href");
+            const selector = anchor.getAttribute("href");
 
             if(!selector || selector === "#") return;
 
@@ -203,7 +185,7 @@ function smoothScrolling(){
 
             if(!target) return;
 
-            e.preventDefault();
+            event.preventDefault();
 
             const navHeight =
                 document.querySelector(".navbar")?.offsetHeight || 0;
@@ -224,13 +206,12 @@ function smoothScrolling(){
 
 }
 
-/* ACTIVE MENU */
-function activeMenu(){
+function initActiveMenu(){
 
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".navbar .nav-menu a");
+    const sections = document.querySelectorAll("section[id]");
+    const links = document.querySelectorAll(".nav-menu a");
 
-    if(!sections.length || !navLinks.length) return;
+    if(!sections.length || !links.length) return;
 
     const update = () => {
 
@@ -238,15 +219,13 @@ function activeMenu(){
 
         sections.forEach(section => {
 
-            const top = section.offsetTop - 130;
-
-            if(window.scrollY >= top){
-                current = section.getAttribute("id") || "";
+            if(window.scrollY >= section.offsetTop - 140){
+                current = section.id;
             }
 
         });
 
-        navLinks.forEach(link => {
+        links.forEach(link => {
 
             link.classList.toggle(
                 "active",
@@ -262,8 +241,7 @@ function activeMenu(){
 
 }
 
-/* PARALLAX */
-function heroParallax(){
+function initHeroParallax(){
 
     const hero = document.querySelector(".hero");
 
@@ -272,37 +250,18 @@ function heroParallax(){
     window.addEventListener("scroll", () => {
 
         hero.style.backgroundPositionY =
-            (window.scrollY * 0.35) + "px";
+            (window.scrollY * 0.15) + "px";
 
     }, {passive:true});
 
 }
 
-/* CARD HOVER */
-function cardHover(){
-
-    document.querySelectorAll(".card").forEach(card => {
-
-        card.addEventListener("mousemove", e => {
-
-            const rect = card.getBoundingClientRect();
-
-            card.style.setProperty("--x", (e.clientX - rect.left) + "px");
-            card.style.setProperty("--y", (e.clientY - rect.top) + "px");
-
-        });
-
-    });
-
-}
-
-/* IMAGE ZOOM */
-function imageZoom(){
+function initGallery(){
 
     document.querySelectorAll(".gallery img").forEach(img => {
 
         img.addEventListener("mouseenter", () => {
-            img.style.transform = "scale(1.05)";
+            img.style.transform = "scale(1.04)";
         });
 
         img.addEventListener("mouseleave", () => {
@@ -312,32 +271,3 @@ function imageZoom(){
     });
 
 }
-
-/* FLOATING EFFECT */
-function floatingEffect(){
-
-    const update = () => {
-
-        document.querySelectorAll(".float-circle").forEach(circle => {
-
-            const x = (Math.random() * 15) - 7;
-            const y = (Math.random() * 15) - 7;
-
-            circle.style.transform =
-                `translate(${x}px,${y}px)`;
-
-        });
-
-    };
-
-    update();
-    setInterval(update, 4000);
-
-}
-
-console.log(
-    "%cAPOAM",
-    "font-size:28px;font-weight:bold;color:#0A9396"
-);
-
-console.log("Site desenvolvido com ❤️");
