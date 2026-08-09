@@ -285,10 +285,6 @@ window.addEventListener("scroll",()=>{
 
     const nav=document.querySelector(".navbar");
 
-    nav.style.boxShadow=window.scrollY>60
-        ?"0 15px 35px rgba(0,0,0,.18)"
-        :"none";
-
 });
 */
 
@@ -349,3 +345,47 @@ console.log(
 "Site desenvolvido com ❤️"
 
 );
+/* ==========================================================
+   MOBILE NAVIGATION
+========================================================== */
+
+const menuToggle = document.querySelector(".menu-toggle");
+const navbar = document.querySelector(".navbar");
+const navMenu = document.querySelector(".nav-menu");
+
+if (menuToggle && navbar && navMenu) {
+
+    menuToggle.addEventListener("click", () => {
+
+        const open = navbar.classList.toggle("menu-open");
+
+        menuToggle.classList.toggle("active", open);
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            open ? "true" : "false"
+        );
+
+    });
+
+
+    /* Fechar ao clicar num link */
+
+    navMenu.querySelectorAll("a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            navbar.classList.remove("menu-open");
+
+            menuToggle.classList.remove("active");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+        });
+
+    });
+
+}

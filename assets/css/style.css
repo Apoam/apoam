@@ -242,55 +242,73 @@ HERO
 .navbar {
     position: absolute;
 
-    top: 25px;
-    left: 50%;
+    top: 0;
+    left: 0;
 
-    transform: translateX(-50%);
+    width: 100%;
+    height: 82px;
 
-    width: min(92%, 1100px);
-    min-height: 68px;
-
-    padding: 0 28px;
+    padding: 0 5%;
 
     display: flex;
     align-items: center;
-    justify-content: center;
 
-    background: rgba(255, 255, 255, 0.94);
+    background: rgba(255, 255, 255, 0.98);
 
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 48, 73, 0.10);
 
-    border: 1px solid rgba(255, 255, 255, 0.8);
-
-    border-radius: 50px;
-
-    box-shadow:
-        0 8px 30px rgba(0, 48, 73, 0.14);
+    box-shadow: 0 2px 12px rgba(0, 48, 73, 0.06);
 
     z-index: 1000;
 
-    transition:
-        background .3s ease,
-        box-shadow .3s ease,
-        top .3s ease;
+    box-sizing: border-box;
 }
 
 
-/* -----------------------------------------------------------
-   DESKTOP MENU
------------------------------------------------------------ */
+/* ===========================================================
+   LOGÓTIPO
+=========================================================== */
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+
+    margin-right: auto;
+
+    color: var(--ocean);
+
+    font-size: 1.55rem;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    text-decoration: none;
+}
+
+.nav-logo img {
+    display: block;
+
+    max-width: 150px;
+    max-height: 55px;
+
+    object-fit: contain;
+}
+
+
+/* ===========================================================
+   MENU
+=========================================================== */
 
 .nav-menu {
     display: flex;
-
     align-items: center;
-    justify-content: center;
 
-    gap: 38px;
+    gap: 34px;
 
     margin: 0;
     padding: 0;
+
+    list-style: none;
 }
 
 .nav-menu li {
@@ -302,45 +320,41 @@ HERO
 
     display: block;
 
-    padding: 7px 2px;
+    padding: 31px 0 28px;
 
     color: var(--ocean);
 
-    font-size: .95rem;
+    font-size: 0.92rem;
     font-weight: 600;
 
     text-decoration: none;
 
-    transition:
-        color .25s ease,
-        transform .25s ease;
+    white-space: nowrap;
+
+    transition: color 0.25s ease;
 }
 
 
-/* Linha por baixo */
+/* Linha inferior */
 
 .nav-menu a::after {
     content: "";
 
     position: absolute;
 
-    left: 50%;
-    bottom: 0;
+    left: 0;
+    bottom: 20px;
 
     width: 0;
     height: 2px;
 
     background: var(--turquoise);
 
-    transform: translateX(-50%);
-
-    transition: width .3s ease;
+    transition: width 0.25s ease;
 }
 
 .nav-menu a:hover {
     color: var(--turquoise);
-
-    transform: translateY(-1px);
 }
 
 .nav-menu a:hover::after {
@@ -348,65 +362,67 @@ HERO
 }
 
 
-/* -----------------------------------------------------------
-   NOME APOAM — apenas mobile
------------------------------------------------------------ */
+/* ===========================================================
+   DESTAQUE — VOLUNTARIADO
+=========================================================== */
 
-.nav-brand {
+.nav-menu li:nth-child(4) a {
+    padding: 11px 18px;
+
+    color: #ffffff;
+
+    background: var(--turquoise);
+
+    border-radius: 4px;
+}
+
+.nav-menu li:nth-child(4) a::after {
     display: none;
+}
 
-    color: var(--ocean);
+.nav-menu li:nth-child(4) a:hover {
+    color: #ffffff;
 
-    font-size: 1.35rem;
-    font-weight: 800;
-
-    letter-spacing: 2px;
+    background: var(--ocean);
 }
 
 
-/* -----------------------------------------------------------
-   BOTÃO HAMBURGER
------------------------------------------------------------ */
+/* ===========================================================
+   HAMBURGER
+=========================================================== */
 
 .menu-toggle {
     display: none;
 
-    width: 44px;
-    height: 44px;
+    width: 42px;
+    height: 42px;
 
-    padding: 9px;
+    padding: 8px;
 
     border: 0;
-    border-radius: 50%;
 
     background: transparent;
 
     cursor: pointer;
-
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    gap: 5px;
 }
 
 .menu-toggle span {
     display: block;
 
-    width: 23px;
+    width: 25px;
     height: 2px;
+
+    margin: 5px auto;
 
     background: var(--ocean);
 
-    border-radius: 5px;
-
     transition:
-        transform .3s ease,
-        opacity .2s ease;
+        transform 0.25s ease,
+        opacity 0.25s ease;
 }
 
 
-/* Hamburger transforma-se em X */
+/* Hamburger → X */
 
 .menu-toggle.active span:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
@@ -421,106 +437,93 @@ HERO
 }
 
 
-/* -----------------------------------------------------------
-   MENU ABERTO
------------------------------------------------------------ */
+/* ===========================================================
+   SCROLL
+=========================================================== */
 
-.navbar.menu-open {
-    border-radius: 25px;
+.navbar.scrolled {
+    position: fixed;
+
+    background: rgba(255, 255, 255, 0.99);
+
+    box-shadow: 0 3px 18px rgba(0, 48, 73, 0.10);
 }
 
 
 /* ===========================================================
-   MOBILE NAVIGATION
+   TABLET
 =========================================================== */
 
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
 
     .navbar {
-        top: 18px;
-
-        width: calc(100% - 30px);
-
-        min-height: 64px;
-
-        padding: 0 15px;
-
-        justify-content: space-between;
-
-        border-radius: 18px;
+        padding: 0 3%;
     }
 
-    .nav-brand {
-        display: block;
+    .nav-menu {
+        gap: 22px;
+    }
+
+    .nav-menu a {
+        font-size: 0.86rem;
+    }
+
+}
+
+
+/* ===========================================================
+   MOBILE
+=========================================================== */
+
+@media (max-width: 850px) {
+
+    .navbar {
+        height: 70px;
+
+        padding: 0 20px;
+    }
+
+    .nav-logo {
+        font-size: 1.35rem;
     }
 
     .menu-toggle {
-        display: flex;
+        display: block;
     }
 
     .nav-menu {
         position: absolute;
 
-        top: calc(100% + 10px);
+        top: 70px;
         left: 0;
 
         width: 100%;
-
-        padding: 12px;
 
         display: flex;
         flex-direction: column;
         align-items: stretch;
 
-        gap: 3px;
+        gap: 0;
 
-        background: rgba(255, 255, 255, 0.98);
+        padding: 10px 20px 20px;
 
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
+        background: #ffffff;
 
-        border-radius: 18px;
+        border-bottom: 1px solid rgba(0, 48, 73, 0.10);
 
-        box-shadow:
-            0 15px 35px rgba(0, 48, 73, 0.16);
+        box-shadow: 0 10px 20px rgba(0, 48, 73, 0.10);
+
+        box-sizing: border-box;
 
         opacity: 0;
         visibility: hidden;
 
         transform: translateY(-10px);
 
-        pointer-events: none;
-
         transition:
-            opacity .25s ease,
-            transform .25s ease,
-            visibility .25s ease;
-    }
-
-    .nav-menu li {
-        width: 100%;
-    }
-
-    .nav-menu a {
-        width: 100%;
-
-        padding: 13px 15px;
-
-        border-radius: 10px;
-
-        color: var(--ocean);
-
-        text-align: left;
-    }
-
-    .nav-menu a:hover {
-        background: var(--light);
-
-        transform: none;
-    }
-
-    .nav-menu a::after {
-        display: none;
+            opacity 0.25s ease,
+            transform 0.25s ease,
+            visibility 0.25s ease;
     }
 
     .navbar.menu-open .nav-menu {
@@ -529,26 +532,52 @@ HERO
         visibility: visible;
 
         transform: translateY(0);
+    }
 
-        pointer-events: auto;
+    .nav-menu li {
+        width: 100%;
+    }
+
+    .nav-menu a {
+        padding: 14px 5px;
+
+        font-size: 0.95rem;
+    }
+
+    .nav-menu a::after {
+        display: none;
+    }
+
+    .nav-menu li:nth-child(4) a {
+        margin-top: 5px;
+
+        padding: 12px 15px;
+
+        text-align: center;
     }
 
 }
 
 
 /* ===========================================================
-   SMALL MOBILE
+   MOBILE PEQUENO
 =========================================================== */
 
 @media (max-width: 500px) {
 
     .navbar {
-        width: calc(100% - 20px);
+        height: 64px;
 
-        top: 12px;
+        padding: 0 15px;
+    }
+
+    .nav-menu {
+        top: 64px;
     }
 
 }
+
+
 /*--------------------------
 Hero Image
 --------------------------*/
