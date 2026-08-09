@@ -69,6 +69,31 @@ function initNavbar(){
         });
 
     });
+	const nav = document.querySelector('.navbar');
+const toggle = document.querySelector('.menu-toggle');
+
+toggle.addEventListener('click', () => {
+    nav.classList.toggle('menu-open');
+    toggle.classList.toggle('active');
+
+    const isOpen = nav.classList.contains('menu-open');
+
+    toggle.setAttribute('aria-expanded', isOpen);
+    toggle.setAttribute(
+        'aria-label',
+        isOpen ? 'Fechar menu' : 'Abrir menu'
+    );
+});
+
+/* Fecha o menu quando volta ao tamanho desktop */
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 850) {
+        nav.classList.remove('menu-open');
+        toggle.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Abrir menu');
+    }
+});
 
 }
 
