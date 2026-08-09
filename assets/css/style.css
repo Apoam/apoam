@@ -402,7 +402,7 @@ body.loaded #loader{
 /* VOLUNTEERING / GOOGLE FORM */
 .volunteer-section{
     padding:90px 20px;
-    background:var(--foam);
+    background:var(#eef6f8);
 }
 .volunteer-box{
     max-width:760px;
