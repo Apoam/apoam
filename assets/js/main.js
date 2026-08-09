@@ -43,19 +43,16 @@ STICKY NAVBAR
 
 function navbar(){
 
-    const nav=document.querySelector(".navbar");
+    const nav = document.querySelector(".navbar");
 
-    window.addEventListener("scroll",()=>{
+    if (!nav) return;
 
-        if(window.scrollY>80){
+    window.addEventListener("scroll", () => {
 
-            nav.classList.add("scrolled");
-
-        }else{
-
-            nav.classList.remove("scrolled");
-
-        }
+        nav.classList.toggle(
+            "scrolled",
+            window.scrollY > 80
+        );
 
     });
 
