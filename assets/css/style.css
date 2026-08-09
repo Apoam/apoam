@@ -1001,3 +1001,38 @@ html {
         scroll-padding-top: 75px;
     }
 }
+/* =========================================================
+   DESTAQUE "JUNTA-TE" NA NAVBAR
+   ========================================================= */
+
+.nav-menu .join-nav {
+    background: #0f6b78;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+.nav-menu .join-nav:hover {
+    background: #084f5a;
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+/* Remove o efeito de linha inferior apenas deste botão */
+.nav-menu .join-nav::after {
+    display: none;
+}
+@media (max-width: 850px) {
+
+    .nav-menu .join-nav {
+        display: block;
+        width: 100%;
+        margin-top: 8px;
+        padding: 12px 15px;
+        text-align: center;
+        border-radius: 8px;
+    }
+
+}

@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initCounters();
     initProgressBar();
     initSmoothScrolling();
-    initActiveMenu();
+    // initActiveMenu();
     initHeroParallax();
     initGallery();
 
