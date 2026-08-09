@@ -1,7 +1,5 @@
 /*
-===========================================================
 APOAM - Main JavaScript
-===========================================================
 */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -18,17 +16,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+
 function initLoader(){
 
-    const hide = () => document.body.classList.add("loaded");
-
-    if(document.readyState === "complete"){
-        hide();
-    }else{
-        window.addEventListener("load", hide, {once:true});
-    }
+    document.body.classList.add("loaded");
 
 }
+
 
 function initNavbar(){
 
@@ -38,13 +32,18 @@ function initNavbar(){
 
     if(!nav) return;
 
+    /* Sombra da navbar ao fazer scroll */
     const updateShadow = () => {
         nav.classList.toggle("scrolled", window.scrollY > 20);
     };
 
     updateShadow();
-    window.addEventListener("scroll", updateShadow, {passive:true});
 
+    window.addEventListener("scroll", updateShadow, {
+        passive: true
+    });
+
+    /* Menu mobile */
     if(!toggle || !menu) return;
 
     toggle.addEventListener("click", () => {
@@ -52,48 +51,62 @@ function initNavbar(){
         const open = nav.classList.toggle("menu-open");
 
         toggle.classList.toggle("active", open);
-        toggle.setAttribute("aria-expanded", open ? "true" : "false");
-        toggle.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
+
+        toggle.setAttribute(
+            "aria-expanded",
+            open ? "true" : "false"
+        );
+
+        toggle.setAttribute(
+            "aria-label",
+            open ? "Fechar menu" : "Abrir menu"
+        );
 
     });
 
+    /* Fecha o menu ao clicar num link */
     menu.querySelectorAll("a").forEach(link => {
 
         link.addEventListener("click", () => {
 
             nav.classList.remove("menu-open");
             toggle.classList.remove("active");
-            toggle.setAttribute("aria-expanded", "false");
-            toggle.setAttribute("aria-label", "Abrir menu");
+
+            toggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            toggle.setAttribute(
+                "aria-label",
+                "Abrir menu"
+            );
 
         });
 
     });
-	const nav = document.querySelector('.navbar');
-const toggle = document.querySelector('.menu-toggle');
 
-toggle.addEventListener('click', () => {
-    nav.classList.toggle('menu-open');
-    toggle.classList.toggle('active');
+    /* Fecha o menu ao voltar para desktop */
+    window.addEventListener("resize", () => {
 
-    const isOpen = nav.classList.contains('menu-open');
+        if(window.innerWidth > 850){
 
-    toggle.setAttribute('aria-expanded', isOpen);
-    toggle.setAttribute(
-        'aria-label',
-        isOpen ? 'Fechar menu' : 'Abrir menu'
-    );
-});
+            nav.classList.remove("menu-open");
+            toggle.classList.remove("active");
 
-/* Fecha o menu quando volta ao tamanho desktop */
-window.addEventListener('resize', () => {
-    if (window.innerWidth > 850) {
-        nav.classList.remove('menu-open');
-        toggle.classList.remove('active');
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.setAttribute('aria-label', 'Abrir menu');
-    }
-});
+            toggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            toggle.setAttribute(
+                "aria-label",
+                "Abrir menu"
+            );
+
+        }
+
+    });
 
 }
 
