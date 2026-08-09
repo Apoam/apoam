@@ -272,15 +272,12 @@ HERO
 .nav-logo {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
 
-    margin-right: auto;
+    flex-shrink: 0;
 
-    color: var(--ocean);
-
-    font-size: 1.55rem;
-    font-weight: 800;
-
-    letter-spacing: 2px;
+    width: 180px;
+    height: 70px;
 
     text-decoration: none;
 }
@@ -288,12 +285,14 @@ HERO
 .nav-logo img {
     display: block;
 
-    max-width: 150px;
-    max-height: 55px;
+    width: auto;
+    height: auto;
+
+    max-width: 170px;
+    max-height: 58px;
 
     object-fit: contain;
 }
-
 
 /* ===========================================================
    MENU
@@ -437,17 +436,6 @@ HERO
 }
 
 
-/* ===========================================================
-   SCROLL
-=========================================================== */
-
-.navbar.scrolled {
-    position: fixed;
-
-    background: rgba(255, 255, 255, 0.99);
-
-    box-shadow: 0 3px 18px rgba(0, 48, 73, 0.10);
-}
 
 
 /* ===========================================================
@@ -653,16 +641,28 @@ transform:translate(-50%,-10px);
 =========================================================== */
 
 .navbar {
-    position: absolute;
+    position: fixed;
 
-    top: 28px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 0;
+    left: 0;
 
-    /* A largura passa a acompanhar o menu */
-    width: fit-content;
+    width: 100%;
+    height: 82px;
 
-    z-index: 1000;
+    padding: 0 5%;
+
+    display: flex;
+    align-items: center;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid rgba(0, 48, 73, 0.10);
+
+    box-shadow: 0 3px 15px rgba(0, 48, 73, 0.08);
+
+    z-index: 9999;
+
+    box-sizing: border-box;
 }
 
 
