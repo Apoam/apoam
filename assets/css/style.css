@@ -936,3 +936,68 @@ footer{
         padding-right: 15px;
     }
 }
+/* =========================================================
+   MISSÃO
+   ========================================================= */
+
+.mission-section {
+    background: #f5f9fa;
+}
+
+.mission-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.mission-content p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   O OBSERVADOR
+   ========================================================= */
+
+.observer-section {
+    background: #ffffff;
+}
+
+.observer-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.observer-content p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .mission-content,
+    .observer-content {
+        width: 92%;
+    }
+
+    .mission-content p,
+    .observer-content p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+}
+html {
+    scroll-padding-top: 90px;
+}
+
+@media (max-width: 500px) {
+    html {
+        scroll-padding-top: 75px;
+    }
+}
