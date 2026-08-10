@@ -1036,3 +1036,16 @@ html {
     }
 
 }
+/* Centrar títulos e subtítulos das secções */ 
+
+	.section-header { 
+		text-align: center; 
+}
+	
+	.section-header h2 { 
+		text-align: center; 
+}
+	
+	.section-header p { 
+		text-align: center; 
+}
