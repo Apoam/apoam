@@ -278,50 +278,6 @@ body.loaded #loader{
 }
 #about .about-images img:hover{transform:scale(1.04)}
 
-/* PROJECTS */
-#projects{
-    background:linear-gradient(180deg,#f8fcfd,#eef7f9);
-}
-.cards{
-    width:min(92%,1280px);
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:35px;
-}
-.card{
-    background:#fff;
-    border-radius:22px;
-    padding:50px 35px;
-    text-align:center;
-    box-shadow:0 20px 45px rgba(0,0,0,.08);
-    transition:.45s;
-    position:relative;
-    overflow:hidden;
-}
-.card::before{
-    content:"";
-    position:absolute;
-    left:0;top:0;width:100%;height:5px;
-    background:linear-gradient(90deg,var(--turquoise),var(--foam));
-    transform:scaleX(0);
-    transform-origin:left;
-    transition:.45s;
-}
-.card:hover::before{transform:scaleX(1)}
-.card:hover{
-    transform:translateY(-15px);
-    box-shadow:0 35px 60px rgba(0,0,0,.14);
-}
-.card .icon{
-    font-size:4rem;
-    margin-bottom:30px;
-    transition:.35s;
-}
-.card:hover .icon{transform:scale(1.15) rotate(5deg)}
-.card h3{margin-bottom:20px}
-.card p{color:#667788}
-
 /* STATS */
 #stats{
     padding:120px 0;
