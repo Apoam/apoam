@@ -6,13 +6,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     initLoader();
     initNavbar();
+    initGallery();
     initReveal();
     initCounters();
     initProgressBar();
     initSmoothScrolling();
     // initActiveMenu();
     initHeroParallax();
-    initGallery();
 
 });
 
@@ -296,7 +296,40 @@ function initHeroParallax(){
 
 function initGallery(){
 
-    document.querySelectorAll(".gallery img").forEach(img => {
+    const gallery = document.querySelector(".gallery");
+
+    if(!gallery) return;
+
+    // Apenas ficheiros cujo nome contém "gallery" podem ser usados.
+    const galleryImages = [
+        "gallery1.jpg",
+        "gallery2.jpg",
+        "gallery3.jpg",
+        "gallery4.jpg",
+        "gallery5.jpg",
+        "gallery6.jpg",
+        "gallery7.JPG",
+        "gallery8.JPG",
+        "gallery9.JPG",
+        "gallery10.JPG",
+        "gallery11.JPG",
+        "gallery12.jpg",
+        "gallery13.jpg"
+    ];
+
+    // Baralha a lista e escolhe seis imagens diferentes em cada carregamento.
+    const shuffled = [...galleryImages].sort(() => Math.random() - 0.5);
+    const selected = shuffled.slice(0, 6);
+
+    gallery.innerHTML = "";
+
+    selected.forEach((filename, index) => {
+
+        const img = document.createElement("img");
+
+        img.src = "assets/img/" + filename;
+        img.alt = "Galeria APOAM " + (index + 1);
+        img.loading = "lazy";
 
         img.addEventListener("mouseenter", () => {
             img.style.transform = "scale(1.04)";
@@ -305,6 +338,8 @@ function initGallery(){
         img.addEventListener("mouseleave", () => {
             img.style.transform = "";
         });
+
+        gallery.appendChild(img);
 
     });
 
