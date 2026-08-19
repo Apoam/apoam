@@ -361,7 +361,7 @@ body.loaded #loader{
 /* VOLUNTEERING / GOOGLE FORM */
 .volunteer-section{
     padding:90px 20px;
-    background:var(#f5f9fa);
+    background:#f5f9fa;
 }
 .volunteer-box{
     max-width:760px;
@@ -1012,9 +1012,12 @@ html {
 		
 }
 /* Texto justificado nas secções */
-.section p,
-.section li {
+.section p {
     text-align: justify;
+}
+
+.section li {
+    text-align: left;
 }
 
 .social-links {
