@@ -254,7 +254,7 @@ body.loaded #loader{
 #about .text li::marker,
 #mission .mission-content li::marker,
 #observer .observer-content li::marker {
-	{color:var(--turquoise);
+	color:var(--turquoise);
 }
 #about .button{
     display:inline-block;
@@ -1016,11 +1016,7 @@ html {
 .section li {
     text-align: justify;
 }
-/* Marcadores turquesa nas listas de conteúdo */
-section ul li::marker,
-section ol li::marker {
-    color: var(--turquoise);
-}
+
 .social-links {
     display: flex;
     gap: 10px;
