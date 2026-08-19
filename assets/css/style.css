@@ -265,7 +265,7 @@ body.loaded #loader{
 #about .image{position:relative}
 #about .about-images{
     display:grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:1fr;
     gap:20px;
 }
 #about .about-images img{
@@ -470,7 +470,7 @@ footer{
     .cards{grid-template-columns:repeat(2,1fr)}
     .gallery{grid-template-columns:repeat(2,1fr)}
     #about .container{grid-template-columns:1fr;gap:50px}
-    #about .about-images{grid-template-columns:1fr 1fr}
+    #about .about-images{grid-template-columns:1fr}
     #about .about-images img{height:300px}
     .stats-container{grid-template-columns:repeat(2,1fr)}
 }
@@ -1001,4 +1001,10 @@ html {
 	
 	.section-header p { 
 		text-align: center; 
+		
+}
+/* Texto justificado nas secções */
+.section p,
+.section li {
+    text-align: justify;
 }
