@@ -925,9 +925,6 @@ footer{
     margin-bottom: 20px;
     line-height: 1.8;
 }
-#observer .observer-content li::marker {
-    color: var(--turquoise);
-}
 
 
 /* =========================================================
@@ -1010,4 +1007,9 @@ html {
 .section p,
 .section li {
     text-align: justify;
+}
+/* Marcadores turquesa nas listas de conteúdo */
+section ul li::marker,
+section ol li::marker {
+    color: var(--turquoise);
 }
