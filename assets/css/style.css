@@ -925,6 +925,9 @@ footer{
     margin-bottom: 20px;
     line-height: 1.8;
 }
+#observer .observer-content li::marker {
+    color: var(--turquoise);
+}
 
 
 /* =========================================================
