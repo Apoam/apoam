@@ -1035,6 +1035,10 @@ html {
         border-radius: 8px;
     }
 
+    .social-links {
+        justify-content: center;
+    }
+
 }
 /* Centrar títulos e subtítulos das secções */ 
 
@@ -1067,7 +1071,6 @@ html {
 
 .social-links {
     display: flex;
-    justify-content: center;
     gap: 10px;
     margin-top: 18px;
 }
