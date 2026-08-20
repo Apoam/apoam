@@ -76,10 +76,20 @@
     </nav>
 
     <div class="hero-content">
-        <img
-            src="assets/img/apoam-logo.png"
-            alt="APOAM - Associação Portuguesa de Observadores do Ambiente Marinho"
-            class="hero-logo">
+        <picture>
+            <source
+                type="image/webp"
+                srcset="assets/img/optimized/apoam-logo-640.webp 640w,
+                        assets/img/optimized/apoam-logo-960.webp 960w,
+                        assets/img/optimized/apoam-logo-1280.webp 1280w"
+                sizes="94vw">
+            <img
+                src="assets/img/apoam-logo.png"
+                alt="APOAM - Associação Portuguesa de Observadores do Ambiente Marinho"
+                class="hero-logo"
+                width="1983"
+                height="793">
+        </picture>
     </div>
 
 
@@ -146,8 +156,22 @@
 
         <div class="image">
             <div class="about-images">
-                <img src="assets/img/about1.jpg" alt="Ambiente marinho">
-                <img src="assets/img/about2.jpg" alt="Observação do ambiente marinho">
+                <picture>
+                    <source type="image/webp"
+                        srcset="assets/img/optimized/about1-640.webp 640w,
+                                assets/img/optimized/about1-960.webp 960w,
+                                assets/img/optimized/about1-1280.webp 1280w"
+                        sizes="(max-width: 1100px) 92vw, 42vw">
+                    <img src="assets/img/about1.jpg" alt="Ambiente marinho" width="4608" height="2304" loading="lazy">
+                </picture>
+                <picture>
+                    <source type="image/webp"
+                        srcset="assets/img/optimized/about2-640.webp 640w,
+                                assets/img/optimized/about2-960.webp 960w,
+                                assets/img/optimized/about2-1280.webp 1280w"
+                        sizes="(max-width: 1100px) 92vw, 42vw">
+                    <img src="assets/img/about2.jpg" alt="Observação do ambiente marinho" width="1500" height="1000" loading="lazy">
+                </picture>
             </div>
         </div>
 
@@ -251,8 +275,22 @@
         </div>
 
     <div class="observer-images">
-        <img src="assets/img/observer1.jpg" alt="Observador do Ambiente Marinho">
-        <img src="assets/img/observer2.jpg" alt="Observação do ambiente marinho">
+        <picture>
+            <source type="image/webp"
+                srcset="assets/img/optimized/observer1-640.webp 640w,
+                        assets/img/optimized/observer1-960.webp 960w,
+                        assets/img/optimized/observer1-1280.webp 1280w"
+                sizes="(max-width: 850px) 92vw, 320px">
+            <img src="assets/img/observer1.jpeg" alt="Observador do Ambiente Marinho" width="4000" height="1800" loading="lazy">
+        </picture>
+        <picture>
+            <source type="image/webp"
+                srcset="assets/img/optimized/observer2-640.webp 640w,
+                        assets/img/optimized/observer2-960.webp 960w,
+                        assets/img/optimized/observer2-1280.webp 1280w"
+                sizes="(max-width: 850px) 92vw, 320px">
+            <img src="assets/img/observer2.JPG" alt="Observação do ambiente marinho" width="6000" height="4000" loading="lazy">
+        </picture>
         <img src="assets/img/observer3.jpg" alt="Monitorização do ambiente marinho">
     </div>
 	

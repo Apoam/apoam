@@ -302,19 +302,19 @@ function initGallery(){
 
     // Apenas ficheiros cujo nome contém "gallery" podem ser usados.
     const galleryImages = [
-        "gallery1.jpg",
-        "gallery2.jpg",
-        "gallery3.jpg",
-        "gallery4.jpg",
-        "gallery5.jpg",
-        "gallery6.jpg",
-        "gallery7.JPG",
-        "gallery8.JPG",
-        "gallery9.JPG",
-        "gallery10.JPG",
-        "gallery11.JPG",
-        "gallery12.jpg",
-        "gallery13.jpg"
+        { original: "gallery1.jpg", base: "gallery1", largest: 1280 },
+        { original: "gallery2.jpg", base: "gallery2", largest: 1280 },
+        { original: "gallery3.jpg", base: "gallery3", largest: 1280 },
+        { original: "gallery4.jpg", base: "gallery4", largest: 1014 },
+        { original: "gallery5.jpg", base: "gallery5", largest: 1280 },
+        { original: "gallery6.jpg", base: "gallery6", largest: 1280 },
+        { original: "gallery7.JPG", base: "gallery7", largest: 1280 },
+        { original: "gallery8.JPG", base: "gallery8", largest: 1280 },
+        { original: "gallery9.JPG", base: "gallery9", largest: 1280 },
+        { original: "gallery10.JPG", base: "gallery10", largest: 1280 },
+        { original: "gallery11.JPG", base: "gallery11", largest: 1280 },
+        { original: "gallery12.jpg", base: "gallery12", largest: 1280 },
+        { original: "gallery13.jpg", base: "gallery13", largest: 1280 }
     ];
 
     // Baralha a lista e escolhe seis imagens diferentes em cada carregamento.
@@ -323,11 +323,20 @@ function initGallery(){
 
     gallery.innerHTML = "";
 
-    selected.forEach((filename, index) => {
+    selected.forEach((image, index) => {
 
+        const picture = document.createElement("picture");
+        const source = document.createElement("source");
         const img = document.createElement("img");
 
-        img.src = "assets/img/" + filename;
+        source.type = "image/webp";
+        source.srcset = [640, 960, image.largest]
+            .filter((width, position, widths) => widths.indexOf(width) === position)
+            .map(width => `assets/img/optimized/${image.base}-${width}.webp ${width}w`)
+            .join(", ");
+        source.sizes = "(max-width: 850px) 92vw, (max-width: 1100px) 46vw, 30vw";
+
+        img.src = "assets/img/" + image.original;
         img.alt = "Galeria APOAM " + (index + 1);
         img.loading = "lazy";
 
@@ -339,7 +348,8 @@ function initGallery(){
             img.style.transform = "";
         });
 
-        gallery.appendChild(img);
+        picture.append(source, img);
+        gallery.appendChild(picture);
 
     });
 
