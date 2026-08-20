@@ -925,8 +925,35 @@ footer{
 }
 
 .observer-content {
-    max-width: 900px;
+    width: min(92%, 1100px);
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 60px;
+    align-items: start;
+}
+
+.observer-text {
+    min-width: 0;
+}
+
+.observer-images {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.observer-images img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform .4s ease;
+}
+
+.observer-images img:hover {
+    transform: scale(1.03);
 }
 
 .observer-content p {
@@ -943,8 +970,20 @@ footer{
 
     .mission-content,
     .observer-content {
-        width: 92%;
-    }
+    width: 92%;
+    grid-template-columns: 1fr;
+    gap: 35px;
+}
+
+.observer-images {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.observer-images img {
+    height: 260px;
+}
 
     .mission-content p,
     .observer-content p {
