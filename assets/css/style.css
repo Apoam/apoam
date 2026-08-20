@@ -1015,9 +1015,15 @@ html {
 .section p {
     text-align: justify;
 }
-
-.section li {
-    text-align: left;
+/* Texto das listas sempre justificado */
+.section ul li,
+.section ol li {
+    text-align: justify;
+}
+/*Marcadores Turquesa */
+.section ul li::marker,
+.section ol li::marker {
+    color: var(--turquoise);
 }
 
 .social-links {
