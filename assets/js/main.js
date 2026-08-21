@@ -303,7 +303,7 @@ function initGallery(){
     // Apenas ficheiros cujo nome contém "gallery" podem ser usados.
     const galleryImages = [
         { original: "gallery1.jpg", base: "gallery1", largest: 1280 },
-        { original: "gallery2.jpg", base: "gallery2", largest: 1280 },
+        { original: "gallery2.jpg", base: "gallery2", largest: 1280, version: "2" },
         { original: "gallery3.jpg", base: "gallery3", largest: 1280 },
         { original: "gallery4.jpg", base: "gallery4", largest: 1014 },
         { original: "gallery5.jpg", base: "gallery5", largest: 1280 },
@@ -332,7 +332,7 @@ function initGallery(){
         source.type = "image/webp";
         source.srcset = [640, 960, image.largest]
             .filter((width, position, widths) => widths.indexOf(width) === position)
-            .map(width => `assets/img/optimized/${image.base}-${width}.webp ${width}w`)
+            .map(width => `assets/img/optimized/${image.base}-${width}.webp${image.version ? `?v=${image.version}` : ""} ${width}w`)
             .join(", ");
         source.sizes = "(max-width: 850px) 92vw, (max-width: 1100px) 46vw, 30vw";
 
