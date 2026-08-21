@@ -465,6 +465,18 @@ body.loaded #loader{
     margin:0 0 12px;
     line-height:1.75;
 }
+.document-placeholder ul{
+    margin:0 0 18px;
+    padding-left:1.4rem;
+    list-style:disc;
+}
+.document-placeholder li{
+    margin-bottom:10px;
+    line-height:1.75;
+}
+.document-placeholder li::marker{
+    color:var(--turquoise);
+}
 .document-placeholder .document-clause{
     padding-left:1.4rem;
     text-indent:-1.4rem;
