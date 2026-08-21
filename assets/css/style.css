@@ -450,6 +450,29 @@ body.loaded #loader{
     border-radius:0 var(--radius) var(--radius) 0;
     background:var(--light);
 }
+.document-placeholder h2{
+    margin:48px 0 22px;
+    font-size:1.8rem;
+}
+.document-placeholder h2:first-child{
+    margin-top:0;
+}
+.document-placeholder h3{
+    margin:32px 0 10px;
+    font-size:1.25rem;
+}
+.document-placeholder p{
+    margin:0 0 12px;
+    line-height:1.75;
+}
+.document-placeholder .document-clause{
+    padding-left:1.4rem;
+    text-indent:-1.4rem;
+}
+.document-placeholder .document-subclause{
+    padding-left:2.8rem;
+    text-indent:-1.4rem;
+}
 
 /* VOLUNTEERING / GOOGLE FORM */
 .volunteer-section{
@@ -674,6 +697,8 @@ footer{
     .gallery img{height:220px}
     .document-page{padding:65px 0}
     .document-page h1{font-size:2.2rem}
+    .document-placeholder{padding:24px 18px}
+    .document-placeholder h2{font-size:1.5rem}
     .counter{font-size:3rem}
     .volunteer-section{padding:60px 15px}
     .volunteer-box{padding:40px 22px;border-radius:15px}
