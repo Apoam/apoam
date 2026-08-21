@@ -473,6 +473,22 @@ body.loaded #loader{
     padding-left:2.8rem;
     text-indent:-1.4rem;
 }
+.document-download{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:13px 20px;
+    border-radius:8px;
+    color:#fff;
+    font-weight:700;
+    background:var(--turquoise);
+    transition:background .2s ease,transform .2s ease;
+}
+.document-download:hover{
+    color:#fff;
+    background:var(--ocean);
+    transform:translateY(-2px);
+}
 
 /* VOLUNTEERING / GOOGLE FORM */
 .volunteer-section{
