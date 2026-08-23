@@ -118,11 +118,19 @@ body.loaded #loader{
 
 .nav-title{
     max-width:270px;
-    color:var(--ocean);
+    display:flex;
+    flex-direction:column;
     font-family:"Montserrat",sans-serif;
     font-size:.72rem;
     font-weight:700;
     line-height:1.25;
+}
+.nav-title span:nth-child(1),
+.nav-title span:nth-child(3){
+    color:var(--atlantic);
+}
+.nav-title span:nth-child(2){
+    color:var(--turquoise);
 }
 
 .nav-menu{
@@ -511,6 +519,28 @@ body.loaded #loader{
     background:var(--ocean);
     transform:translateY(-2px);
 }
+.governing-bodies section + section{
+    margin-top:42px;
+}
+.governing-bodies dl{
+    margin:0;
+}
+.governing-bodies dl > div{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    gap:18px;
+    padding:13px 0;
+    border-bottom:1px solid #dce8eb;
+}
+.governing-bodies dt{
+    color:#556677;
+    font-weight:600;
+}
+.governing-bodies dd{
+    margin:0;
+    color:var(--ocean);
+    font-weight:700;
+}
 
 /* VOLUNTEERING / GOOGLE FORM */
 .volunteer-section{
@@ -737,6 +767,7 @@ footer{
     .document-page h1{font-size:2.2rem}
     .document-placeholder{padding:24px 18px}
     .document-placeholder h2{font-size:1.5rem}
+    .governing-bodies dl > div{grid-template-columns:1fr;gap:2px}
     .counter{font-size:3rem}
     .volunteer-section{padding:60px 15px}
     .volunteer-box{padding:40px 22px;border-radius:15px}
@@ -782,15 +813,18 @@ footer{
 
     .nav-logo img {
         display: block;
-        width: auto;
-        height: auto;
-        max-width: 145px;
-        max-height: 52px;
+        width:52px;
+        height:52px;
+        max-width:52px;
+        max-height:52px;
         object-fit: contain;
     }
 
     .nav-title {
-        display: none;
+        display:flex;
+        max-width:200px;
+        font-size:.56rem;
+        line-height:1.2;
     }
 
     /* BOTÃO HAMBURGER */
