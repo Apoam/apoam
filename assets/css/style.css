@@ -448,6 +448,29 @@ body.loaded #loader{
 .back-home:hover{
     color:var(--turquoise);
 }
+@media (max-width:850px){
+    .simple-header{
+        min-height:0;
+        padding:10px 18px;
+        flex-wrap:wrap;
+        gap:8px;
+    }
+    .simple-header .nav-logo{
+        height:52px;
+        gap:8px;
+    }
+    .simple-header .nav-logo img{
+        width:52px;
+        height:52px;
+        max-width:52px;
+        max-height:52px;
+    }
+    .simple-header .back-home{
+        width:100%;
+        text-align:right;
+        font-size:.85rem;
+    }
+}
 .document-page{
     width:min(92%,900px);
     min-height:calc(100vh - 82px);
@@ -526,20 +549,24 @@ body.loaded #loader{
     margin:0;
 }
 .governing-bodies dl > div{
-    display:grid;
-    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
-    gap:18px;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:baseline;
+    gap:8px;
     padding:13px 0;
     border-bottom:1px solid #dce8eb;
 }
 .governing-bodies dt{
-    color:#556677;
-    font-weight:600;
+    color:var(--ocean);
+    font-weight:700;
+}
+.governing-bodies dt::after{
+    content:":";
 }
 .governing-bodies dd{
     margin:0;
-    color:var(--ocean);
-    font-weight:700;
+    color:#556677;
+    font-weight:400;
 }
 
 /* VOLUNTEERING / GOOGLE FORM */
@@ -767,7 +794,7 @@ footer{
     .document-page h1{font-size:2.2rem}
     .document-placeholder{padding:24px 18px}
     .document-placeholder h2{font-size:1.5rem}
-    .governing-bodies dl > div{grid-template-columns:1fr;gap:2px}
+    .governing-bodies dl > div{gap:6px}
     .counter{font-size:3rem}
     .volunteer-section{padding:60px 15px}
     .volunteer-box{padding:40px 22px;border-radius:15px}
