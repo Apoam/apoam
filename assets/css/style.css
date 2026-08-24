@@ -549,10 +549,10 @@ body.loaded #loader{
     margin:0;
 }
 .governing-bodies dl > div{
-    display:flex;
-    flex-wrap:wrap;
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
     align-items:baseline;
-    gap:8px;
+    gap:18px;
     padding:13px 0;
     border-bottom:1px solid #dce8eb;
 }
@@ -560,13 +560,11 @@ body.loaded #loader{
     color:var(--ocean);
     font-weight:700;
 }
-.governing-bodies dt::after{
-    content:":";
-}
 .governing-bodies dd{
     margin:0;
     color:#556677;
     font-weight:400;
+    text-align:right;
 }
 
 /* VOLUNTEERING / GOOGLE FORM */
@@ -794,7 +792,7 @@ footer{
     .document-page h1{font-size:2.2rem}
     .document-placeholder{padding:24px 18px}
     .document-placeholder h2{font-size:1.5rem}
-    .governing-bodies dl > div{gap:6px}
+    .governing-bodies dl > div{gap:10px}
     .counter{font-size:3rem}
     .volunteer-section{padding:60px 15px}
     .volunteer-box{padding:40px 22px;border-radius:15px}
