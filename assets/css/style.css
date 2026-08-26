@@ -92,7 +92,8 @@ body.loaded #loader{
     justify-content:center;
     align-items:flex-start;
     background:linear-gradient(rgba(5,25,35,.20),rgba(5,25,35,.35));
-    padding:100px 0 70px;
+    /* 82px compensam a navbar fixa; ficam 60px visíveis acima e abaixo da imagem. */
+    padding:142px 0 60px;
 }
 
 /* NAVBAR — única definição */
