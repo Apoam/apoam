@@ -29,6 +29,18 @@ a{text-decoration:none;color:inherit}
 ul{list-style:none}
 section{position:relative}
 
+.visually-hidden{
+    position:absolute;
+    width:1px;
+    height:1px;
+    padding:0;
+    margin:-1px;
+    overflow:hidden;
+    clip:rect(0,0,0,0);
+    white-space:nowrap;
+    border:0;
+}
+
 h1,h2,h3,h4{
     font-family:"Montserrat",sans-serif;
     color:var(--ocean);
