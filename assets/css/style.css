@@ -85,14 +85,14 @@ body.loaded #loader{
 .hero{
     position:relative;
     width:100%;
-    min-height:850px;
-    height:100vh;
+    min-height:0;
+    height:auto;
     overflow:hidden;
     display:flex;
     justify-content:center;
-    align-items:center;
+    align-items:flex-start;
     background:linear-gradient(rgba(5,25,35,.20),rgba(5,25,35,.35));
-    padding-top:82px;
+    padding:100px 0 70px;
 }
 
 /* NAVBAR — única definição */
