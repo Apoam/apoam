@@ -40,6 +40,9 @@ section{position:relative}
     white-space:nowrap;
     border:0;
 }
+.hero-content > .visually-hidden{
+    display:none;
+}
 
 h1,h2,h3,h4{
     font-family:"Montserrat",sans-serif;
