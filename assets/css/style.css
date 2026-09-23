@@ -300,8 +300,7 @@ body.loaded #loader{
     display:grid;
     grid-template-columns:1fr;
     gap:20px;
-    align-self:stretch;
-    align-content:space-evenly;
+    align-self:center;
 }
 #about .about-images img{
     width:100%;
@@ -529,6 +528,9 @@ body.loaded #loader{
     transform:translateY(-2px);
 }
 .governing-bodies section + section{
+    margin-top:42px;
+}
+.governing-bodies > section:first-of-type{
     margin-top:42px;
 }
 .governing-bodies dl{
@@ -880,8 +882,7 @@ footer{
     display: flex;
     flex-direction: column;
     gap: 20px;
-    align-self: stretch;
-    justify-content: space-evenly;
+    align-self: center;
 }
 
 .observer-images img {
