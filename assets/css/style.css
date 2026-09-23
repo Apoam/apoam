@@ -246,46 +246,37 @@ body.loaded #loader{
 /* ABOUT */
 #about{background:#fff}
 #about .container{
+    display:block;
+}
+.about-content{
+    width:min(92%,1100px);
+    margin:0 auto;
     display:grid;
-    grid-template-columns:1.1fr .9fr;
-    gap:80px;
-    align-items:center;
+    grid-template-columns:1fr 320px;
+    gap:60px;
+    align-items:start;
 }
-#about .text{animation:fadeInLeft .9s ease}
-#about h2{
-    position:relative;
-    display:inline-block;
-    margin-bottom:35px;
-}
-#about h2::after{
-    content:"";
-    position:absolute;
-    left:0;
-    bottom:-12px;
-    width:70px;
-    height:5px;
-    border-radius:10px;
-    background:var(--turquoise);
-}
+#about .section-header{margin-bottom:45px}
+.about-text{min-width:0}
 #about p{
     margin-bottom:25px;
     color:#556677;
     font-size:1.08rem;
 }
-#about .text ul,
+#about .about-text ul,
 #mission .mission-content ul,
 #observer .observer-content ul {
     list-style:disc;
     padding-left:25px;
     margin:10px 0 25px;
 }
-#about .text li,
+#about .about-text li,
 #mission .mission-content li,
 #observer .observer-content li {
     margin-bottom:12px;
     color:#556677;
 }
-#about .text li::marker,
+#about .about-text li::marker,
 #mission .mission-content li::marker,
 #observer .observer-content li::marker {
 	color:var(--turquoise);
@@ -312,7 +303,7 @@ body.loaded #loader{
 }
 #about .about-images img{
     width:100%;
-    height:360px;
+    height:220px;
     object-fit:cover;
     border-radius:var(--radius);
     box-shadow:var(--shadow);
@@ -680,9 +671,6 @@ footer{
     .cards{grid-template-columns:repeat(2,1fr)}
     .gallery{grid-template-columns:repeat(2,1fr)}
     .institutional-grid{grid-template-columns:repeat(2,1fr)}
-    #about .container{grid-template-columns:1fr;gap:50px}
-    #about .about-images{grid-template-columns:1fr}
-    #about .about-images img{height:300px}
     .stats-container{grid-template-columns:repeat(2,1fr)}
 }
 
@@ -764,7 +752,7 @@ footer{
         white-space:normal;
     }
     .nav-menu a::after{display:none}
-    .nav-menu .join-nav{
+    .navbar .nav-menu .join-nav{
         display:block;
         width:100%;
         margin-top:8px;
@@ -780,8 +768,10 @@ footer{
     .hero-logo{width:100%;height:auto;border-radius:12px}
     .scroll-indicator{display:none}
     .section{padding:80px 0}
-    #about .container{width:92%;grid-template-columns:1fr;gap:42px}
+    .about-content{width:92%;grid-template-columns:1fr;gap:35px}
     #about p{font-size:1rem}
+    #about .about-images{display:grid;grid-template-columns:1fr;gap:16px}
+    #about .about-images img{height:260px}
     .cards{width:92%;grid-template-columns:1fr;gap:24px}
     .card{padding:38px 25px}
     .gallery{width:92%;grid-template-columns:1fr;gap:16px}
@@ -789,11 +779,11 @@ footer{
     .institutional-grid{grid-template-columns:1fr}
     .stats-container{width:92%;grid-template-columns:1fr;gap:20px}
     .mission-content,
-    .observer-content{width:92%;grid-template-columns:1fr;gap:35px}
+    .observer-section .observer-content{width:92%;grid-template-columns:1fr;gap:35px}
     .mission-content p,
     .observer-content p{font-size:1rem;line-height:1.7}
-    .observer-images{display:grid;grid-template-columns:1fr;gap:16px}
-    .observer-images img{height:260px}
+    .observer-section .observer-images{display:grid;grid-template-columns:1fr;gap:16px}
+    .observer-section .observer-images img{height:260px}
     .volunteer-section{padding:65px 15px}
     .volunteer-box{width:100%;padding:40px 22px;border-radius:16px}
     .footer-grid{width:92%;grid-template-columns:1fr;gap:35px;text-align:center}
@@ -910,45 +900,6 @@ footer{
 
 
 /* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 850px) {
-
-    .mission-content,
-    .observer-content {
-    width: 92%;
-    grid-template-columns: 1fr;
-    gap: 35px;
-}
-
-.observer-images {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-}
-
-.observer-images img {
-    height: 260px;
-}
-
-    .mission-content p,
-    .observer-content p {
-        font-size: 1rem;
-        line-height: 1.7;
-    }
-
-}
-html {
-    scroll-padding-top: 90px;
-}
-
-@media (max-width: 500px) {
-    html {
-        scroll-padding-top: 75px;
-    }
-}
-/* =========================================================
    DESTAQUE "JUNTA-TE" NA NAVBAR
    ========================================================= */
 
@@ -970,22 +921,6 @@ html {
 /* Remove o efeito de linha inferior apenas deste botão */
 .nav-menu .join-nav::after {
     display: none;
-}
-@media (max-width: 850px) {
-
-    .nav-menu .join-nav {
-        display: block;
-        width: 100%;
-        margin-top: 8px;
-        padding: 12px 15px;
-        text-align: center;
-        border-radius: 8px;
-    }
-
-    .social-links {
-        justify-content: center;
-    }
-
 }
 /* Centrar títulos e subtítulos das secções */ 
 
