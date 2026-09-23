@@ -295,16 +295,12 @@ body.loaded #loader{
     background:var(--turquoise);
     transform:translateY(-4px);
 }
-#about .image{
-    position:relative;
-    display:flex;
-    align-items:center;
-}
 #about .about-images{
-    display:grid;
-    grid-template-columns:1fr;
+    display:flex;
+    flex-direction:column;
     gap:20px;
     width:100%;
+    align-self:center;
 }
 #about .about-images img{
     width:100%;
