@@ -1000,6 +1000,8 @@ footer{
 }
 
 .product-card{
+    display:grid;
+    grid-template-columns:1fr 1fr;
     overflow:hidden;
     border-radius:var(--radius);
     background:#fff;
@@ -1009,11 +1011,15 @@ footer{
 .product-card img{
     display:block;
     width:100%;
-    aspect-ratio:4 / 5;
+    height:100%;
+    min-height:260px;
     object-fit:cover;
 }
 
 .product-info{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
     padding:24px;
 }
 
@@ -1059,5 +1065,17 @@ footer{
 @media (max-width:850px){
     .store-catalog{
         grid-template-columns:1fr;
+    }
+}
+
+@media (max-width:500px){
+    .product-card{
+        grid-template-columns:1fr;
+    }
+
+    .product-card img{
+        height:auto;
+        min-height:0;
+        aspect-ratio:4 / 5;
     }
 }
