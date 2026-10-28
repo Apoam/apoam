@@ -993,27 +993,35 @@ footer{
 }
 
 .store-catalog{
-    display:flex;
-    flex-direction:column;
-    gap:54px;
+    display:block;
     margin-top:42px;
 }
 
 .product-collection{
-    display:block;
+    display:block !important;
+    clear:both;
     width:100%;
 }
 
+.product-collection + .product-collection{
+    margin-top:54px;
+}
+
 .product-collection > h2{
+    display:block;
+    width:100%;
     margin:0 0 12px;
     color:var(--ocean);
 }
 
 .collection-description{
+    display:block;
+    width:100%;
     margin:0 0 24px;
 }
 
 .collection-content{
+    display:block;
     width:100%;
 }
 
