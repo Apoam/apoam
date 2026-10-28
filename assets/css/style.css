@@ -1008,10 +1008,14 @@ footer{
     box-shadow:var(--shadow);
 }
 
+.product-card picture,
 .product-card img{
     display:block;
     width:100%;
     height:100%;
+}
+
+.product-card img{
     min-height:260px;
     object-fit:cover;
 }
